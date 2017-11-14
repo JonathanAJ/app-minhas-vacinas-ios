@@ -13,9 +13,9 @@
         <scene sceneID="A3Y-qX-8xP">
             <objects>
                 <navigationController id="tFo-jt-iLg" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Informações" id="5Rv-up-8yX"/>
+                    <tabBarItem key="tabBarItem" title="Informações" image="ios7-information-outline" id="5Rv-up-8yX"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="XsC-x7-uKZ">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="XsC-x7-uKZ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.20392156862745098" green="0.59607843137254901" blue="0.85882352941176465" alpha="1" colorSpace="calibratedRGB"/>
@@ -28,7 +28,7 @@
             </objects>
             <point key="canvasLocation" x="-1045" y="238"/>
         </scene>
-        <!--App Vacinas-->
+        <!--View Controller-->
         <scene sceneID="LM2-ws-ATv">
             <objects>
                 <viewController id="GJ5-vB-wSu" sceneMemberID="viewController">
@@ -52,11 +52,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="App Vacinas" id="v8X-5o-fVb"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lp0-IC-0LA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="321" y="143"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="ios7-information-outline" width="32" height="32"/>
+    </resources>
 </document>
