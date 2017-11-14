@@ -9,11 +9,15 @@
 /* Begin PBXBuildFile section */
 		28ED6D931FBB60A1009F880A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28ED6D921FBB60A1009F880A /* AppDelegate.swift */; };
 		28ED6D951FBB60A1009F880A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28ED6D941FBB60A1009F880A /* ViewController.swift */; };
-		28ED6D981FBB60A1009F880A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28ED6D961FBB60A1009F880A /* Main.storyboard */; };
 		28ED6D9A1FBB60A1009F880A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28ED6D991FBB60A1009F880A /* Assets.xcassets */; };
-		28ED6D9D1FBB60A1009F880A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28ED6D9B1FBB60A1009F880A /* LaunchScreen.storyboard */; };
 		28ED6DA81FBB60A2009F880A /* MinhaVacinasTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28ED6DA71FBB60A2009F880A /* MinhaVacinasTests.swift */; };
 		28ED6DB31FBB60A2009F880A /* MinhaVacinasUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28ED6DB21FBB60A2009F880A /* MinhaVacinasUITests.swift */; };
+		3E838EA41FBB722A00D3AC78 /* Agenda.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E838EA21FBB722A00D3AC78 /* Agenda.storyboard */; };
+		3E838EAC1FBB72DB00D3AC78 /* Informacoes.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E838EAB1FBB72DB00D3AC78 /* Informacoes.storyboard */; };
+		3E838EB21FBB731500D3AC78 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E838EB01FBB731500D3AC78 /* Main.storyboard */; };
+		3E838EBB1FBB73E400D3AC78 /* Locais.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E838EB91FBB73E300D3AC78 /* Locais.storyboard */; };
+		3E838EC11FBB740900D3AC78 /* Sobre.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E838EBF1FBB740900D3AC78 /* Sobre.storyboard */; };
+		3EC0F1BB1FBB6BE0004F1CDE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EC0F1B81FBB6BE0004F1CDE /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,9 +41,7 @@
 		28ED6D8F1FBB60A1009F880A /* MinhaVacinas.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MinhaVacinas.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		28ED6D921FBB60A1009F880A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		28ED6D941FBB60A1009F880A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		28ED6D971FBB60A1009F880A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		28ED6D991FBB60A1009F880A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		28ED6D9C1FBB60A1009F880A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		28ED6D9E1FBB60A1009F880A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		28ED6DA31FBB60A2009F880A /* MinhaVacinasTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MinhaVacinasTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		28ED6DA71FBB60A2009F880A /* MinhaVacinasTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinhaVacinasTests.swift; sourceTree = "<group>"; };
@@ -47,6 +49,12 @@
 		28ED6DAE1FBB60A2009F880A /* MinhaVacinasUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MinhaVacinasUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		28ED6DB21FBB60A2009F880A /* MinhaVacinasUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinhaVacinasUITests.swift; sourceTree = "<group>"; };
 		28ED6DB41FBB60A2009F880A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3E838EA31FBB722A00D3AC78 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = MinhaVacinas/Base.lproj/Agenda.storyboard; sourceTree = SOURCE_ROOT; };
+		3E838EAB1FBB72DB00D3AC78 /* Informacoes.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Informacoes.storyboard; sourceTree = SOURCE_ROOT; };
+		3E838EB11FBB731500D3AC78 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = MinhaVacinas/Base.lproj/Main.storyboard; sourceTree = SOURCE_ROOT; };
+		3E838EBA1FBB73E300D3AC78 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = MinhaVacinas/Base.lproj/Locais.storyboard; sourceTree = SOURCE_ROOT; };
+		3E838EC01FBB740900D3AC78 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = MinhaVacinas/Base.lproj/Sobre.storyboard; sourceTree = SOURCE_ROOT; };
+		3EC0F1B91FBB6BE0004F1CDE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = MinhaVacinas/Base.lproj/LaunchScreen.storyboard; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,11 +105,10 @@
 		28ED6D911FBB60A1009F880A /* MinhaVacinas */ = {
 			isa = PBXGroup;
 			children = (
+				3EC0F1B51FBB6B8F004F1CDE /* Views */,
 				28ED6D921FBB60A1009F880A /* AppDelegate.swift */,
 				28ED6D941FBB60A1009F880A /* ViewController.swift */,
-				28ED6D961FBB60A1009F880A /* Main.storyboard */,
 				28ED6D991FBB60A1009F880A /* Assets.xcassets */,
-				28ED6D9B1FBB60A1009F880A /* LaunchScreen.storyboard */,
 				28ED6D9E1FBB60A1009F880A /* Info.plist */,
 			);
 			path = MinhaVacinas;
@@ -123,6 +130,19 @@
 				28ED6DB41FBB60A2009F880A /* Info.plist */,
 			);
 			path = MinhaVacinasUITests;
+			sourceTree = "<group>";
+		};
+		3EC0F1B51FBB6B8F004F1CDE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3E838EBF1FBB740900D3AC78 /* Sobre.storyboard */,
+				3E838EB91FBB73E300D3AC78 /* Locais.storyboard */,
+				3E838EB01FBB731500D3AC78 /* Main.storyboard */,
+				3E838EAB1FBB72DB00D3AC78 /* Informacoes.storyboard */,
+				3E838EA21FBB722A00D3AC78 /* Agenda.storyboard */,
+				3EC0F1B81FBB6BE0004F1CDE /* LaunchScreen.storyboard */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -232,9 +252,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				28ED6D9D1FBB60A1009F880A /* LaunchScreen.storyboard in Resources */,
+				3E838EA41FBB722A00D3AC78 /* Agenda.storyboard in Resources */,
+				3E838EC11FBB740900D3AC78 /* Sobre.storyboard in Resources */,
+				3EC0F1BB1FBB6BE0004F1CDE /* LaunchScreen.storyboard in Resources */,
+				3E838EAC1FBB72DB00D3AC78 /* Informacoes.storyboard in Resources */,
+				3E838EBB1FBB73E400D3AC78 /* Locais.storyboard in Resources */,
+				3E838EB21FBB731500D3AC78 /* Main.storyboard in Resources */,
 				28ED6D9A1FBB60A1009F880A /* Assets.xcassets in Resources */,
-				28ED6D981FBB60A1009F880A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -296,18 +320,42 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		28ED6D961FBB60A1009F880A /* Main.storyboard */ = {
+		3E838EA21FBB722A00D3AC78 /* Agenda.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				28ED6D971FBB60A1009F880A /* Base */,
+				3E838EA31FBB722A00D3AC78 /* Base */,
+			);
+			name = Agenda.storyboard;
+			sourceTree = "<group>";
+		};
+		3E838EB01FBB731500D3AC78 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3E838EB11FBB731500D3AC78 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		28ED6D9B1FBB60A1009F880A /* LaunchScreen.storyboard */ = {
+		3E838EB91FBB73E300D3AC78 /* Locais.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				28ED6D9C1FBB60A1009F880A /* Base */,
+				3E838EBA1FBB73E300D3AC78 /* Base */,
+			);
+			name = Locais.storyboard;
+			sourceTree = "<group>";
+		};
+		3E838EBF1FBB740900D3AC78 /* Sobre.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3E838EC01FBB740900D3AC78 /* Base */,
+			);
+			name = Sobre.storyboard;
+			sourceTree = "<group>";
+		};
+		3EC0F1B81FBB6BE0004F1CDE /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3EC0F1B91FBB6BE0004F1CDE /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -505,6 +553,7 @@
 				28ED6DB91FBB60A2009F880A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		28ED6DBA1FBB60A2009F880A /* Build configuration list for PBXNativeTarget "MinhaVacinasTests" */ = {
 			isa = XCConfigurationList;
@@ -513,6 +562,7 @@
 				28ED6DBC1FBB60A2009F880A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		28ED6DBD1FBB60A2009F880A /* Build configuration list for PBXNativeTarget "MinhaVacinasUITests" */ = {
 			isa = XCConfigurationList;
@@ -521,6 +571,7 @@
 				28ED6DBF1FBB60A2009F880A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
