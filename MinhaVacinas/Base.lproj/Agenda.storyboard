@@ -26,12 +26,60 @@
                         <barButtonItem key="backBarButtonItem" title="Agenda" id="UP3-BW-8MN"/>
                         <barButtonItem key="rightBarButtonItem" title="Adicionar" id="Mi8-gA-ySm">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <segue destination="SFX-RG-Kkc" kind="presentation" id="hgq-Q6-kua"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Lc-Qu-5c3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="804" y="-161"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="8FS-6s-fGY">
+            <objects>
+                <viewController id="SFX-RG-Kkc" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="nx6-FU-1P4"/>
+                        <viewControllerLayoutGuide type="bottom" id="oRT-e3-RfU"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="SFs-p5-fNm">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TSs-Rn-MTS">
+                                <rect key="frame" x="0.0" y="20" width="375" height="64"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="aZ8-u8-lvm"/>
+                                </constraints>
+                                <color key="barTintColor" red="0.20392156859999999" green="0.59607843140000005" blue="0.85882352939999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </textAttributes>
+                                <items>
+                                    <navigationItem title="Cadastrar Perfil" id="qzH-0i-BLm">
+                                        <barButtonItem key="leftBarButtonItem" title="Cancelar" id="uAD-By-avf">
+                                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="Salvar" id="CXX-RX-3CX">
+                                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="TSs-Rn-MTS" firstAttribute="leading" secondItem="SFs-p5-fNm" secondAttribute="leading" id="EDJ-nP-mtM"/>
+                            <constraint firstItem="TSs-Rn-MTS" firstAttribute="top" secondItem="nx6-FU-1P4" secondAttribute="bottom" id="YeG-ce-LKo"/>
+                            <constraint firstAttribute="trailing" secondItem="TSs-Rn-MTS" secondAttribute="trailing" id="jTG-Zg-fIi"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bHD-Do-eBu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1585" y="-161"/>
         </scene>
         <!--Agenda-->
         <scene sceneID="iGE-fr-feq">
