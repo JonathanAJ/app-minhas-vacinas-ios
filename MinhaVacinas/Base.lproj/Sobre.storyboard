@@ -22,11 +22,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Sobre" id="nUu-yp-RAt"/>
+                    <tabBarItem key="tabBarItem" title="Sobre" image="ios7-box-outline" id="nUu-yp-RAt"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zvu-of-ams" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="314" y="297"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="ios7-box-outline" width="32" height="32"/>
+    </resources>
 </document>

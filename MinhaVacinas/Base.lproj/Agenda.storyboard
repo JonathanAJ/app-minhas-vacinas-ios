@@ -37,7 +37,7 @@
         <scene sceneID="iGE-fr-feq">
             <objects>
                 <navigationController id="nn9-vQ-dK7" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Agenda" id="tdv-Xf-F0f"/>
+                    <tabBarItem key="tabBarItem" title="Agenda" image="ios7-home-outline" id="tdv-Xf-F0f"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="wKX-F4-2we">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -56,4 +56,7 @@
             <point key="canvasLocation" x="3" y="-161"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="ios7-home-outline" width="30" height="30"/>
+    </resources>
 </document>
