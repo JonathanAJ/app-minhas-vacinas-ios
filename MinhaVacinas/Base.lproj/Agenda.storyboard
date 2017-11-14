@@ -12,7 +12,7 @@
         <!--Agenda-->
         <scene sceneID="nHM-lK-HmK">
             <objects>
-                <viewController id="K9M-as-K2b" sceneMemberID="viewController">
+                <viewController id="K9M-as-K2b" customClass="AgendaController" customModule="MinhaVacinas" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Iya-ED-9rS"/>
                         <viewControllerLayoutGuide type="bottom" id="Jbg-4F-ahN"/>

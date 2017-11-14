@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		28ED6D931FBB60A1009F880A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28ED6D921FBB60A1009F880A /* AppDelegate.swift */; };
-		28ED6D951FBB60A1009F880A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28ED6D941FBB60A1009F880A /* ViewController.swift */; };
 		28ED6D9A1FBB60A1009F880A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28ED6D991FBB60A1009F880A /* Assets.xcassets */; };
 		28ED6DA81FBB60A2009F880A /* MinhaVacinasTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28ED6DA71FBB60A2009F880A /* MinhaVacinasTests.swift */; };
 		28ED6DB31FBB60A2009F880A /* MinhaVacinasUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28ED6DB21FBB60A2009F880A /* MinhaVacinasUITests.swift */; };
@@ -17,6 +16,8 @@
 		3E838EB21FBB731500D3AC78 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E838EB01FBB731500D3AC78 /* Main.storyboard */; };
 		3E838EBB1FBB73E400D3AC78 /* Locais.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E838EB91FBB73E300D3AC78 /* Locais.storyboard */; };
 		3E838EC11FBB740900D3AC78 /* Sobre.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E838EBF1FBB740900D3AC78 /* Sobre.storyboard */; };
+		3E838EC41FBB75B000D3AC78 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E838EC31FBB75B000D3AC78 /* ViewController.swift */; };
+		3E838EC61FBB75D600D3AC78 /* AgendaController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E838EC51FBB75D600D3AC78 /* AgendaController.swift */; };
 		3EC0F1BB1FBB6BE0004F1CDE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EC0F1B81FBB6BE0004F1CDE /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -40,7 +41,6 @@
 /* Begin PBXFileReference section */
 		28ED6D8F1FBB60A1009F880A /* MinhaVacinas.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MinhaVacinas.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		28ED6D921FBB60A1009F880A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		28ED6D941FBB60A1009F880A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		28ED6D991FBB60A1009F880A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		28ED6D9E1FBB60A1009F880A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		28ED6DA31FBB60A2009F880A /* MinhaVacinasTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MinhaVacinasTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -54,6 +54,8 @@
 		3E838EB11FBB731500D3AC78 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = MinhaVacinas/Base.lproj/Main.storyboard; sourceTree = SOURCE_ROOT; };
 		3E838EBA1FBB73E300D3AC78 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = MinhaVacinas/Base.lproj/Locais.storyboard; sourceTree = SOURCE_ROOT; };
 		3E838EC01FBB740900D3AC78 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = MinhaVacinas/Base.lproj/Sobre.storyboard; sourceTree = SOURCE_ROOT; };
+		3E838EC31FBB75B000D3AC78 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = MinhaVacinas/ViewController.swift; sourceTree = SOURCE_ROOT; };
+		3E838EC51FBB75D600D3AC78 /* AgendaController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgendaController.swift; sourceTree = "<group>"; };
 		3EC0F1B91FBB6BE0004F1CDE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = MinhaVacinas/Base.lproj/LaunchScreen.storyboard; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -105,9 +107,9 @@
 		28ED6D911FBB60A1009F880A /* MinhaVacinas */ = {
 			isa = PBXGroup;
 			children = (
+				3E838EC21FBB757C00D3AC78 /* Controllers */,
 				3EC0F1B51FBB6B8F004F1CDE /* Views */,
 				28ED6D921FBB60A1009F880A /* AppDelegate.swift */,
-				28ED6D941FBB60A1009F880A /* ViewController.swift */,
 				28ED6D991FBB60A1009F880A /* Assets.xcassets */,
 				28ED6D9E1FBB60A1009F880A /* Info.plist */,
 			);
@@ -130,6 +132,15 @@
 				28ED6DB41FBB60A2009F880A /* Info.plist */,
 			);
 			path = MinhaVacinasUITests;
+			sourceTree = "<group>";
+		};
+		3E838EC21FBB757C00D3AC78 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				3E838EC31FBB75B000D3AC78 /* ViewController.swift */,
+				3E838EC51FBB75D600D3AC78 /* AgendaController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 		3EC0F1B51FBB6B8F004F1CDE /* Views */ = {
@@ -283,8 +294,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				28ED6D951FBB60A1009F880A /* ViewController.swift in Sources */,
+				3E838EC41FBB75B000D3AC78 /* ViewController.swift in Sources */,
 				28ED6D931FBB60A1009F880A /* AppDelegate.swift in Sources */,
+				3E838EC61FBB75D600D3AC78 /* AgendaController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
