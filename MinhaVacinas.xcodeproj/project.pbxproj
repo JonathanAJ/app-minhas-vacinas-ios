@@ -11,6 +11,7 @@
 		28ED6D9A1FBB60A1009F880A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28ED6D991FBB60A1009F880A /* Assets.xcassets */; };
 		28ED6DA81FBB60A2009F880A /* MinhaVacinasTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28ED6DA71FBB60A2009F880A /* MinhaVacinasTests.swift */; };
 		28ED6DB31FBB60A2009F880A /* MinhaVacinasUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28ED6DB21FBB60A2009F880A /* MinhaVacinasUITests.swift */; };
+		28ED6DD81FBE0331009F880A /* InformacoesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28ED6DD71FBE0331009F880A /* InformacoesController.swift */; };
 		3E838EA41FBB722A00D3AC78 /* Agenda.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E838EA21FBB722A00D3AC78 /* Agenda.storyboard */; };
 		3E838EAC1FBB72DB00D3AC78 /* Informacoes.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E838EAB1FBB72DB00D3AC78 /* Informacoes.storyboard */; };
 		3E838EB21FBB731500D3AC78 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E838EB01FBB731500D3AC78 /* Main.storyboard */; };
@@ -49,6 +50,7 @@
 		28ED6DAE1FBB60A2009F880A /* MinhaVacinasUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MinhaVacinasUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		28ED6DB21FBB60A2009F880A /* MinhaVacinasUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinhaVacinasUITests.swift; sourceTree = "<group>"; };
 		28ED6DB41FBB60A2009F880A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		28ED6DD71FBE0331009F880A /* InformacoesController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InformacoesController.swift; sourceTree = "<group>"; };
 		3E838EA31FBB722A00D3AC78 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = MinhaVacinas/Base.lproj/Agenda.storyboard; sourceTree = SOURCE_ROOT; };
 		3E838EAB1FBB72DB00D3AC78 /* Informacoes.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Informacoes.storyboard; sourceTree = SOURCE_ROOT; };
 		3E838EB11FBB731500D3AC78 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = MinhaVacinas/Base.lproj/Main.storyboard; sourceTree = SOURCE_ROOT; };
@@ -139,6 +141,7 @@
 			children = (
 				3E838EC31FBB75B000D3AC78 /* ViewController.swift */,
 				3E838EC51FBB75D600D3AC78 /* AgendaController.swift */,
+				28ED6DD71FBE0331009F880A /* InformacoesController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -294,6 +297,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				28ED6DD81FBE0331009F880A /* InformacoesController.swift in Sources */,
 				3E838EC41FBB75B000D3AC78 /* ViewController.swift in Sources */,
 				28ED6D931FBB60A1009F880A /* AppDelegate.swift in Sources */,
 				3E838EC61FBB75D600D3AC78 /* AgendaController.swift in Sources */,
