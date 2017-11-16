@@ -28,10 +28,10 @@
             </objects>
             <point key="canvasLocation" x="-1045" y="238"/>
         </scene>
-        <!--Informacoes-->
+        <!--Info Controller-->
         <scene sceneID="LM2-ws-ATv">
             <objects>
-                <viewController id="GJ5-vB-wSu" customClass="Informacoes" sceneMemberID="viewController">
+                <viewController id="GJ5-vB-wSu" customClass="InfoController" customModule="MinhaVacinas" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="97X-dr-pHX"/>
                         <viewControllerLayoutGuide type="bottom" id="kUY-QZ-jZ4"/>
@@ -58,6 +58,8 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="listaVacinas" destination="6nG-cT-5Kf" id="26d-fI-KBp"/>
+                        <outlet property="navegacaoSegmentInfo" destination="MLt-de-hN3" id="Ag7-1u-OzE"/>
                         <segue destination="CNq-N8-svs" kind="show" id="ATL-SG-q3q"/>
                     </connections>
                 </viewController>

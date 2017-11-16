@@ -9,6 +9,15 @@
 import UIKit
 
 class InfoController: UIViewController {
+    
+    
+    
+    @IBOutlet weak var navegacaoSegmentInfo: UISegmentedControl!
+    
+    @IBOutlet weak var listaVacinas: UITableView!
+    
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,5 +40,9 @@ class InfoController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    func requisicaoVacinas()  {
+        
+    }
 
 }
