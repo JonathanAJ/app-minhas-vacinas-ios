@@ -28,10 +28,10 @@
             </objects>
             <point key="canvasLocation" x="-1045" y="238"/>
         </scene>
-        <!--View Controller-->
+        <!--Informacoes-->
         <scene sceneID="LM2-ws-ATv">
             <objects>
-                <viewController id="GJ5-vB-wSu" sceneMemberID="viewController">
+                <viewController id="GJ5-vB-wSu" customClass="Informacoes" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="97X-dr-pHX"/>
                         <viewControllerLayoutGuide type="bottom" id="kUY-QZ-jZ4"/>
