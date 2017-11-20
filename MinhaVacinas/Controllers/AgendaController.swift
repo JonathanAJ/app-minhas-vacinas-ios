@@ -10,11 +10,16 @@ import UIKit
 
 class AgendaController: UIViewController {
 
+    @IBOutlet weak var circleProgress: CircleProgressView!
+    @IBOutlet weak var textProgress: UITextView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        circleProgress.setProgress(1, animated: true);
+        textProgress.text = "100%"
 
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
