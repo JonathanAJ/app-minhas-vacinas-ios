@@ -18,7 +18,7 @@
                         <viewControllerLayoutGuide type="bottom" id="Jbg-4F-ahN"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="TY3-3J-njv">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -36,10 +36,10 @@
             </objects>
             <point key="canvasLocation" x="804" y="-161"/>
         </scene>
-        <!--View Controller-->
+        <!--Cadastro Controller-->
         <scene sceneID="8FS-6s-fGY">
             <objects>
-                <viewController id="SFX-RG-Kkc" sceneMemberID="viewController">
+                <viewController id="SFX-RG-Kkc" customClass="CadastroController" customModule="MinhaVacinas" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="nx6-FU-1P4"/>
                         <viewControllerLayoutGuide type="bottom" id="oRT-e3-RfU"/>
@@ -48,11 +48,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TSs-Rn-MTS">
-                                <rect key="frame" x="0.0" y="20" width="375" height="64"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="64" id="aZ8-u8-lvm"/>
-                                </constraints>
+                            <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TSs-Rn-MTS">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="barTintColor" red="0.20392156859999999" green="0.59607843140000005" blue="0.85882352939999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <textAttributes key="titleTextAttributes">
                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -61,6 +59,9 @@
                                     <navigationItem title="Cadastrar Perfil" id="qzH-0i-BLm">
                                         <barButtonItem key="leftBarButtonItem" title="Cancelar" id="uAD-By-avf">
                                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <connections>
+                                                <action selector="cancelar:" destination="SFX-RG-Kkc" id="YLz-aI-L2o"/>
+                                            </connections>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" title="Salvar" id="CXX-RX-3CX">
                                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -71,11 +72,14 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="TSs-Rn-MTS" firstAttribute="leading" secondItem="SFs-p5-fNm" secondAttribute="leading" id="EDJ-nP-mtM"/>
-                            <constraint firstItem="TSs-Rn-MTS" firstAttribute="top" secondItem="nx6-FU-1P4" secondAttribute="bottom" id="YeG-ce-LKo"/>
-                            <constraint firstAttribute="trailing" secondItem="TSs-Rn-MTS" secondAttribute="trailing" id="jTG-Zg-fIi"/>
+                            <constraint firstAttribute="trailing" secondItem="TSs-Rn-MTS" secondAttribute="trailing" id="IsS-Gf-fkf"/>
+                            <constraint firstItem="TSs-Rn-MTS" firstAttribute="leading" secondItem="SFs-p5-fNm" secondAttribute="leading" id="Lcj-1K-tAS"/>
+                            <constraint firstItem="TSs-Rn-MTS" firstAttribute="top" secondItem="nx6-FU-1P4" secondAttribute="bottom" id="ZR0-Hb-qbH"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="btCancelar" destination="uAD-By-avf" id="6vG-Yn-pBK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bHD-Do-eBu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -87,7 +91,7 @@
                 <navigationController id="nn9-vQ-dK7" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Agenda" image="ios7-home-outline" id="tdv-Xf-F0f"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="wKX-F4-2we">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="wKX-F4-2we">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.20392156862745098" green="0.59607843137254901" blue="0.85882352941176465" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
