@@ -12,8 +12,8 @@
 		28ED6DA81FBB60A2009F880A /* MinhaVacinasTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28ED6DA71FBB60A2009F880A /* MinhaVacinasTests.swift */; };
 		28ED6DB31FBB60A2009F880A /* MinhaVacinasUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28ED6DB21FBB60A2009F880A /* MinhaVacinasUITests.swift */; };
 		28ED6DDA1FBE090F009F880A /* InfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28ED6DD91FBE090F009F880A /* InfoController.swift */; };
-		28ED6DDC1FBE2AF8009F880A /* NetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28ED6DDB1FBE2AF8009F880A /* NetworkController.swift */; };
-		28ED6DDF1FBE2F5E009F880A /* Vacinas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28ED6DDE1FBE2F5E009F880A /* Vacinas.swift */; };
+		28ED6DE21FC34AEB009F880A /* Vacinas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28ED6DE11FC34AEB009F880A /* Vacinas.swift */; };
+		28ED6DE71FC34BCE009F880A /* NetworkDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28ED6DE61FC34BCE009F880A /* NetworkDAO.swift */; };
 		3E838EA41FBB722A00D3AC78 /* Agenda.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E838EA21FBB722A00D3AC78 /* Agenda.storyboard */; };
 		3E838EAC1FBB72DB00D3AC78 /* Informacoes.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E838EAB1FBB72DB00D3AC78 /* Informacoes.storyboard */; };
 		3E838EB21FBB731500D3AC78 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E838EB01FBB731500D3AC78 /* Main.storyboard */; };
@@ -53,8 +53,8 @@
 		28ED6DB21FBB60A2009F880A /* MinhaVacinasUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinhaVacinasUITests.swift; sourceTree = "<group>"; };
 		28ED6DB41FBB60A2009F880A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		28ED6DD91FBE090F009F880A /* InfoController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoController.swift; sourceTree = "<group>"; };
-		28ED6DDB1FBE2AF8009F880A /* NetworkController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkController.swift; sourceTree = "<group>"; };
-		28ED6DDE1FBE2F5E009F880A /* Vacinas.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vacinas.swift; sourceTree = "<group>"; };
+		28ED6DE11FC34AEB009F880A /* Vacinas.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vacinas.swift; sourceTree = "<group>"; };
+		28ED6DE61FC34BCE009F880A /* NetworkDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NetworkDAO.swift; path = Controllers/NetworkDAO.swift; sourceTree = "<group>"; };
 		3E838EA31FBB722A00D3AC78 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = MinhaVacinas/Base.lproj/Agenda.storyboard; sourceTree = SOURCE_ROOT; };
 		3E838EAB1FBB72DB00D3AC78 /* Informacoes.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Informacoes.storyboard; sourceTree = SOURCE_ROOT; };
 		3E838EB11FBB731500D3AC78 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = MinhaVacinas/Base.lproj/Main.storyboard; sourceTree = SOURCE_ROOT; };
@@ -113,7 +113,8 @@
 		28ED6D911FBB60A1009F880A /* MinhaVacinas */ = {
 			isa = PBXGroup;
 			children = (
-				28ED6DDD1FBE2E8C009F880A /* informacoes */,
+				28ED6DE31FC34AF3009F880A /* DAO */,
+				28ED6DE01FC34AD7009F880A /* Model */,
 				3E838EC21FBB757C00D3AC78 /* Controllers */,
 				3EC0F1B51FBB6B8F004F1CDE /* Views */,
 				28ED6D921FBB60A1009F880A /* AppDelegate.swift */,
@@ -141,12 +142,20 @@
 			path = MinhaVacinasUITests;
 			sourceTree = "<group>";
 		};
-		28ED6DDD1FBE2E8C009F880A /* informacoes */ = {
+		28ED6DE01FC34AD7009F880A /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				28ED6DDE1FBE2F5E009F880A /* Vacinas.swift */,
+				28ED6DE11FC34AEB009F880A /* Vacinas.swift */,
 			);
-			name = informacoes;
+			name = Model;
+			sourceTree = "<group>";
+		};
+		28ED6DE31FC34AF3009F880A /* DAO */ = {
+			isa = PBXGroup;
+			children = (
+				28ED6DE61FC34BCE009F880A /* NetworkDAO.swift */,
+			);
+			name = DAO;
 			sourceTree = "<group>";
 		};
 		3E838EC21FBB757C00D3AC78 /* Controllers */ = {
@@ -155,7 +164,6 @@
 				3E838EC31FBB75B000D3AC78 /* ViewController.swift */,
 				3E838EC51FBB75D600D3AC78 /* AgendaController.swift */,
 				28ED6DD91FBE090F009F880A /* InfoController.swift */,
-				28ED6DDB1FBE2AF8009F880A /* NetworkController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -311,12 +319,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				28ED6DDC1FBE2AF8009F880A /* NetworkController.swift in Sources */,
 				3E838EC41FBB75B000D3AC78 /* ViewController.swift in Sources */,
 				28ED6D931FBB60A1009F880A /* AppDelegate.swift in Sources */,
-				28ED6DDF1FBE2F5E009F880A /* Vacinas.swift in Sources */,
 				3E838EC61FBB75D600D3AC78 /* AgendaController.swift in Sources */,
+				28ED6DE21FC34AEB009F880A /* Vacinas.swift in Sources */,
 				28ED6DDA1FBE090F009F880A /* InfoController.swift in Sources */,
+				28ED6DE71FC34BCE009F880A /* NetworkDAO.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
