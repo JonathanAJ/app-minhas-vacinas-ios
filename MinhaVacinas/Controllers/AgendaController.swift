@@ -8,16 +8,44 @@
 
 import UIKit
 
-class AgendaController: UIViewController {
+class AgendaController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
 
     @IBOutlet weak var circleProgress: CircleProgressView!
     @IBOutlet weak var textProgress: UITextView!
+    @IBOutlet weak var collectionView: UICollectionView!
+    
+    var dataPerfis : [Perfil] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         circleProgress.setProgress(1, animated: true);
         textProgress.text = "100%"
-
+        
+        collectionView.dataSource = self
+        collectionView.delegate = self
+        
+        dataPerfis.append(Perfil(name: "Teste Teste da Silva", age: "10 anos", image: nil))
+        dataPerfis.append(Perfil(name: "Teste2", age: "8 anos", image: nil))
+        dataPerfis.append(Perfil(name: "Teste3", age: "3 anos", image: nil))
+        dataPerfis.append(Perfil(name: "Teste3", age: "3 anos", image: nil))
+        dataPerfis.append(Perfil(name: "Teste3", age: "3 anos", image: nil))
+        dataPerfis.append(Perfil(name: "Teste3", age: "3 anos", image: nil))
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return dataPerfis.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        let myCell = collectionView.dequeueReusableCell(withReuseIdentifier: "myCollectionCell", for: indexPath) as! MyCollectionCellController
+        
+        myCell.displayCell(image: dataPerfis[indexPath.row].image,
+                           name: dataPerfis[indexPath.row].name,
+                           age: dataPerfis[indexPath.row].age)
+        
+        return myCell
     }
     
     override func didReceiveMemoryWarning() {
