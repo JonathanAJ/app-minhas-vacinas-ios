@@ -8,23 +8,23 @@
 
 import UIKit
 
-class InfoController: UIViewController {
-    
+class InfoController: UIViewController,UITableViewDataSource, UITableViewDelegate {
     
     
     @IBOutlet weak var navegacaoSegmentInfo: UISegmentedControl!
     
     @IBOutlet weak var listaVacinas: UITableView!
     
+    var vacinas = NetworkDAO.retornaFakeVacinas()
     
     
-
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        var net = NetworkController()
-        net.printdata()
+        listaVacinas.delegate = self
+        listaVacinas.dataSource = self
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -43,8 +43,26 @@ class InfoController: UIViewController {
     }
     */
     
-    func requisicaoVacinas()  {
-        
+    // numero de linhas na tabela
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return vacinas.count
     }
+    
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell:UITableViewCell = self.listaVacinas.dequeueReusableCell(withIdentifier: "Vacina") as UITableViewCell!
+         let vacina = vacinas[indexPath.row]
+         cell.textLabel?.text = vacina.doenca
+        
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cell = listaVacinas.cellForRow(at: indexPath)
+//        tableView.deselectRow(at: IndexPath, animated: true)
+        
+        performSegue(withIdentifier: "detalheVacina", sender: cell)
+    }
+    
 
 }

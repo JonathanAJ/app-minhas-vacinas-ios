@@ -7,3 +7,13 @@
 //
 
 import Foundation
+
+struct Vacina {
+    var idade: String
+    var vacina: String
+    var doenca: String
+    var dose: String
+    var doseQtd: String?
+    var viaAdm: String?
+    var descricao: String
+}
