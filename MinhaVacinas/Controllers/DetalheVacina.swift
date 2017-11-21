@@ -9,9 +9,20 @@
 import UIKit
 
 class DetalheVacina: UIViewController {
+    
+    
+    @IBOutlet weak var nomeVacina: UILabel!
+    
+    @IBOutlet weak var detalheVacina: UITextView!
+    
+    var nome = ""
+    var descricao = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        nomeVacina.text = nome
+        detalheVacina.text = descricao
 
         // Do any additional setup after loading the view.
     }
@@ -20,6 +31,8 @@ class DetalheVacina: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    
     
 
     /*

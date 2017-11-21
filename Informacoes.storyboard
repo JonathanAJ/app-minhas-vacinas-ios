@@ -77,10 +77,10 @@
             </objects>
             <point key="canvasLocation" x="265" y="238"/>
         </scene>
-        <!--View Controller-->
+        <!--Detalhe Vacina-->
         <scene sceneID="fBO-uH-VOb">
             <objects>
-                <viewController id="CNq-N8-svs" sceneMemberID="viewController">
+                <viewController id="CNq-N8-svs" customClass="DetalheVacina" customModule="MinhaVacinas" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="tZS-0v-gdd"/>
                         <viewControllerLayoutGuide type="bottom" id="mrq-YW-z3b"/>
@@ -107,6 +107,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="detalheVacina" destination="miV-NT-e5C" id="nPK-AG-DdD"/>
+                        <outlet property="nomeVacina" destination="gb4-1T-DSL" id="aM0-8W-vsO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U4M-8J-q0E" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

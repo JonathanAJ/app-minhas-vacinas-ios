@@ -12,7 +12,6 @@ class InfoController: UIViewController,UITableViewDataSource, UITableViewDelegat
     
     
     @IBOutlet weak var navegacaoSegmentInfo: UISegmentedControl!
-    
     @IBOutlet weak var listaVacinas: UITableView!
     
     var vacinas = NetworkDAO.retornaFakeVacinas()
@@ -59,9 +58,22 @@ class InfoController: UIViewController,UITableViewDataSource, UITableViewDelegat
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell = listaVacinas.cellForRow(at: indexPath)
-//        tableView.deselectRow(at: IndexPath, animated: true)
         
         performSegue(withIdentifier: "detalheVacina", sender: cell)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "detalheVacina" {
+            if let posicao = listaVacinas.indexPathForSelectedRow {
+                let controller = segue.destination as! DetalheVacina
+                let vacina = vacinas[posicao.row]
+                
+                
+                controller.nome = vacina.vacina
+                controller.descricao = vacina.descricao
+                
+            }
+        }
     }
     
 
