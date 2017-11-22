@@ -8,23 +8,24 @@
 
 import UIKit
 
-class InfoController: UIViewController {
-    
+class InfoController: UIViewController,UITableViewDataSource, UITableViewDelegate {
     
     
     @IBOutlet weak var navegacaoSegmentInfo: UISegmentedControl!
-    
     @IBOutlet weak var listaVacinas: UITableView!
     
+    var vacinas = VacinasDAO.retornaFakeVacinas()
+    var sessoes = VacinasDAO.categorias
     
-    
-
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        var net = NetworkController()
-        net.printdata()
+        listaVacinas.delegate = self
+        listaVacinas.dataSource = self
+        
+        //print(vacinas)
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -43,8 +44,57 @@ class InfoController: UIViewController {
     }
     */
     
-    func requisicaoVacinas()  {
-        
+    // Configuracoes da table view
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return sessoes[section]
     }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return sessoes.count
+    }
+    
+    // Numero de linhas em cada sessao
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return vacinas[section].count
+    }
+    
+    // Configurando as celulas da tableView
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Vacina", for: indexPath)
+        
+        let vacina = vacinas[indexPath.section][indexPath.row]
+        
+        cell.textLabel?.text = vacina.vacina
+        
+        return cell
+    }
+    
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cell = listaVacinas.cellForRow(at: indexPath)
+        
+        performSegue(withIdentifier: "detalheVacina", sender: cell)
+    }
+    
+    
+    
+    
+    
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "detalheVacina" {
+            if let posicao = listaVacinas.indexPathForSelectedRow {
+                let controller = segue.destination as! DetalheVacina
+                let vacina = vacinas[posicao.section][posicao.row]
+                
+                
+                controller.nome = vacina.vacina
+                controller.descricao = vacina.descricao
+                
+            }
+        }
+    }
+    
 
 }

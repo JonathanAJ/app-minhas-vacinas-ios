@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Informações-->
+        <!--Vacinas-->
         <scene sceneID="A3Y-qX-8xP">
             <objects>
-                <navigationController id="tFo-jt-iLg" sceneMemberID="viewController">
+                <navigationController title="Vacinas" id="tFo-jt-iLg" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Informações" image="ios7-information-outline" id="5Rv-up-8yX"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="XsC-x7-uKZ">
@@ -49,28 +49,38 @@
                                     <segment title="Perguntas"/>
                                 </segments>
                             </segmentedControl>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6nG-cT-5Kf">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" sectionIndexMinimumDisplayRowCount="1" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6nG-cT-5Kf">
                                 <rect key="frame" x="16" y="122" width="343" height="488"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Vacina" id="NhU-Tw-GuD">
+                                        <rect key="frame" x="0.0" y="28" width="343" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="NhU-Tw-GuD" id="pW0-vJ-igs">
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <outlet property="listaVacinas" destination="6nG-cT-5Kf" id="26d-fI-KBp"/>
+                        <outlet property="listaVacinas" destination="6nG-cT-5Kf" id="zCB-oi-uot"/>
                         <outlet property="navegacaoSegmentInfo" destination="MLt-de-hN3" id="Ag7-1u-OzE"/>
-                        <segue destination="CNq-N8-svs" kind="show" id="ATL-SG-q3q"/>
+                        <segue destination="CNq-N8-svs" kind="show" identifier="detalheVacina" id="hOc-51-DMD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lp0-IC-0LA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="265" y="238"/>
         </scene>
-        <!--View Controller-->
+        <!--Detalhe Vacina-->
         <scene sceneID="fBO-uH-VOb">
             <objects>
-                <viewController id="CNq-N8-svs" sceneMemberID="viewController">
+                <viewController id="CNq-N8-svs" customClass="DetalheVacina" customModule="MinhaVacinas" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="tZS-0v-gdd"/>
                         <viewControllerLayoutGuide type="bottom" id="mrq-YW-z3b"/>
@@ -97,6 +107,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="detalheVacina" destination="miV-NT-e5C" id="nPK-AG-DdD"/>
+                        <outlet property="nomeVacina" destination="gb4-1T-DSL" id="aM0-8W-vsO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U4M-8J-q0E" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
