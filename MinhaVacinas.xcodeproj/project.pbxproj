@@ -14,6 +14,8 @@
 		28ED6DDA1FBE090F009F880A /* InfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28ED6DD91FBE090F009F880A /* InfoController.swift */; };
 		28ED6DE21FC34AEB009F880A /* Vacinas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28ED6DE11FC34AEB009F880A /* Vacinas.swift */; };
 		28ED6DE71FC34BCE009F880A /* NetworkDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28ED6DE61FC34BCE009F880A /* NetworkDAO.swift */; };
+		3E7FA9D81FC49FA7002DD752 /* MyCollectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E7FA9D71FC49FA7002DD752 /* MyCollectionController.swift */; };
+		3E7FA9DA1FC4A59F002DD752 /* Perfil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E7FA9D91FC4A59F002DD752 /* Perfil.swift */; };
 		28ED6DE91FC4A58F009F880A /* DetalheVacina.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28ED6DE81FC4A58F009F880A /* DetalheVacina.swift */; };
 		3E838EA41FBB722A00D3AC78 /* Agenda.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E838EA21FBB722A00D3AC78 /* Agenda.storyboard */; };
 		3E838EAC1FBB72DB00D3AC78 /* Informacoes.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E838EAB1FBB72DB00D3AC78 /* Informacoes.storyboard */; };
@@ -22,6 +24,8 @@
 		3E838EC11FBB740900D3AC78 /* Sobre.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E838EBF1FBB740900D3AC78 /* Sobre.storyboard */; };
 		3E838EC41FBB75B000D3AC78 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E838EC31FBB75B000D3AC78 /* ViewController.swift */; };
 		3E838EC61FBB75D600D3AC78 /* AgendaController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E838EC51FBB75D600D3AC78 /* AgendaController.swift */; };
+		3E838EC81FC34ECE00D3AC78 /* CadastroController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E838EC71FC34ECE00D3AC78 /* CadastroController.swift */; };
+		3E838ED31FC367CA00D3AC78 /* CircleProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E838ED21FC367CA00D3AC78 /* CircleProgressView.swift */; };
 		3EC0F1BB1FBB6BE0004F1CDE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EC0F1B81FBB6BE0004F1CDE /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -56,6 +60,9 @@
 		28ED6DD91FBE090F009F880A /* InfoController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoController.swift; sourceTree = "<group>"; };
 		28ED6DE11FC34AEB009F880A /* Vacinas.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vacinas.swift; sourceTree = "<group>"; };
 		28ED6DE61FC34BCE009F880A /* NetworkDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NetworkDAO.swift; path = Controllers/NetworkDAO.swift; sourceTree = "<group>"; };
+		3E7FA9D71FC49FA7002DD752 /* MyCollectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCollectionController.swift; sourceTree = "<group>"; };
+		3E7FA9D91FC4A59F002DD752 /* Perfil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Perfil.swift; sourceTree = "<group>"; };
+
 		28ED6DE81FC4A58F009F880A /* DetalheVacina.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetalheVacina.swift; sourceTree = "<group>"; };
 		3E838EA31FBB722A00D3AC78 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = MinhaVacinas/Base.lproj/Agenda.storyboard; sourceTree = SOURCE_ROOT; };
 		3E838EAB1FBB72DB00D3AC78 /* Informacoes.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Informacoes.storyboard; sourceTree = SOURCE_ROOT; };
@@ -64,6 +71,8 @@
 		3E838EC01FBB740900D3AC78 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = MinhaVacinas/Base.lproj/Sobre.storyboard; sourceTree = SOURCE_ROOT; };
 		3E838EC31FBB75B000D3AC78 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = MinhaVacinas/ViewController.swift; sourceTree = SOURCE_ROOT; };
 		3E838EC51FBB75D600D3AC78 /* AgendaController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgendaController.swift; sourceTree = "<group>"; };
+		3E838EC71FC34ECE00D3AC78 /* CadastroController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CadastroController.swift; sourceTree = "<group>"; };
+		3E838ED21FC367CA00D3AC78 /* CircleProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleProgressView.swift; sourceTree = "<group>"; };
 		3EC0F1B91FBB6BE0004F1CDE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = MinhaVacinas/Base.lproj/LaunchScreen.storyboard; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -115,6 +124,7 @@
 		28ED6D911FBB60A1009F880A /* MinhaVacinas */ = {
 			isa = PBXGroup;
 			children = (
+				3E838ED21FC367CA00D3AC78 /* CircleProgressView.swift */,
 				28ED6DE31FC34AF3009F880A /* DAO */,
 				28ED6DE01FC34AD7009F880A /* Model */,
 				3E838EC21FBB757C00D3AC78 /* Controllers */,
@@ -148,6 +158,7 @@
 			isa = PBXGroup;
 			children = (
 				28ED6DE11FC34AEB009F880A /* Vacinas.swift */,
+				3E7FA9D91FC4A59F002DD752 /* Perfil.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -165,7 +176,10 @@
 			children = (
 				3E838EC31FBB75B000D3AC78 /* ViewController.swift */,
 				3E838EC51FBB75D600D3AC78 /* AgendaController.swift */,
+				3E838EC71FC34ECE00D3AC78 /* CadastroController.swift */,
 				28ED6DD91FBE090F009F880A /* InfoController.swift */,
+
+				3E7FA9D71FC49FA7002DD752 /* MyCollectionController.swift */,
 				28ED6DE81FC4A58F009F880A /* DetalheVacina.swift */,
 			);
 			path = Controllers;
@@ -322,10 +336,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3E838EC81FC34ECE00D3AC78 /* CadastroController.swift in Sources */,
 				3E838EC41FBB75B000D3AC78 /* ViewController.swift in Sources */,
 				28ED6D931FBB60A1009F880A /* AppDelegate.swift in Sources */,
 				3E838EC61FBB75D600D3AC78 /* AgendaController.swift in Sources */,
 				28ED6DE21FC34AEB009F880A /* Vacinas.swift in Sources */,
+				3E7FA9DA1FC4A59F002DD752 /* Perfil.swift in Sources */,
+				3E7FA9D81FC49FA7002DD752 /* MyCollectionController.swift in Sources */,
+				3E838ED31FC367CA00D3AC78 /* CircleProgressView.swift in Sources */,
 				28ED6DE91FC4A58F009F880A /* DetalheVacina.swift in Sources */,
 				28ED6DDA1FBE090F009F880A /* InfoController.swift in Sources */,
 				28ED6DE71FC34BCE009F880A /* NetworkDAO.swift in Sources */,
