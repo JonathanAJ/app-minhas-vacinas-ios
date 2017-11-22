@@ -37,6 +37,11 @@ class AgendaController: UIViewController, UICollectionViewDataSource, UICollecti
         return dataPerfis.count
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print(dataPerfis[indexPath.row].name)
+        performSegue(withIdentifier: "seguePerfil", sender: nil)
+    }
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let myCell = collectionView.dequeueReusableCell(withReuseIdentifier: "myCollectionCell", for: indexPath) as! MyCollectionCellController
