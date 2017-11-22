@@ -7,32 +7,44 @@
 //
 import UIKit
 
-struct NetworkDAO {
-    func retornaData() {
-        let url = URL(string: "http://dados.recife.pe.gov.br/api/action/datastore_search?resource_id=8222148c-14d1-47ba-ae0e-39c879246284")
-        
-        let task = URLSession.shared.dataTask(with: url!) { (data, response, error) in
-            guard error == nil else {
-                print(error!)
-                return
-            }
-            guard let data = data else {
-                print("Data is empty")
-                return
-            }
-            
-            print(data)
-        }
-        task.resume()
-        
-    }
+struct VacinasDAO {
     
-    static func retornaFakeVacinas() -> [Vacina]{
-        var vacinas = [Vacina]()
-        vacinas.append(Vacina(idade: "Ao nascer", vacina: "BCG", doenca:"Turberculose" , dose: "20ml", doseQtd: "2", viaAdm: "Braco", descricao: "Vacina BCG"))
-        vacinas.append(Vacina(idade: "10 anos", vacina: "HPV", doenca: "HPV", dose: "10ml", doseQtd: "3", viaAdm: "Braco", descricao: "Vacina HPV"))
+    static let categorias = ["0 aos 2 anos", "4 aos 10 anos", "11 aos 19 anos", "20 aos 59 anos", "60+"]
+    static var todasAsVacinas = [[Vacina]]()
     
-        return vacinas
+    static func retornaFakeVacinas() -> [[Vacina]]{
+        var vacinas1 = [Vacina]()
+        vacinas1.append(Vacina(idade: "Ao nascer", vacina: "BCG", doenca:"Turberculose" , dose: "20ml", doseQtd: "2", viaAdm: "Braco", descricao: "Vacina BCG"))
+        vacinas1.append(Vacina(idade: "10 anos", vacina: "HPV", doenca: "HPV", dose: "10ml", doseQtd: "3", viaAdm: "Braco", descricao: "Vacina HPV"))
+        
+        var vacinas2 = [Vacina]()
+        vacinas2.append(Vacina(idade: "Ao nascer", vacina: "Sarampo", doenca:"Turberculose" , dose: "20ml", doseQtd: "2", viaAdm: "Braco", descricao: "Vacina BCG"))
+        vacinas2.append(Vacina(idade: "10 anos", vacina: "Gripe", doenca: "HPV", dose: "10ml", doseQtd: "3", viaAdm: "Braco", descricao: "Vacina HPV"))
+        
+        var vacinas3 = [Vacina]()
+        vacinas3.append(Vacina(idade: "Ao nascer", vacina: "Hepatite B", doenca:"Turberculose" , dose: "20ml", doseQtd: "2", viaAdm: "Braco", descricao: "Vacina BCG"))
+        vacinas3.append(Vacina(idade: "10 anos", vacina: "Hepatite D", doenca: "HPV", dose: "10ml", doseQtd: "3", viaAdm: "Braco", descricao: "Vacina HPV"))
+        
+        var vacinas4 = [Vacina]()
+        vacinas4.append(Vacina(idade: "Ao nascer", vacina: "Influenza", doenca:"Turberculose" , dose: "20ml", doseQtd: "2", viaAdm: "Braco", descricao: "Vacina BCG"))
+        vacinas4.append(Vacina(idade: "10 anos", vacina: "Dengue", doenca: "HPV", dose: "10ml", doseQtd: "3", viaAdm: "Braco", descricao: "Vacina HPV"))
+        
+        var vacinas5 = [Vacina]()
+        vacinas5.append(Vacina(idade: "Ao nascer", vacina: "Gripe", doenca:"Turberculose" , dose: "20ml", doseQtd: "2", viaAdm: "Braco", descricao: "Vacina BCG"))
+        vacinas5.append(Vacina(idade: "10 anos", vacina: "Hepatite Z", doenca: "HPV", dose: "10ml", doseQtd: "3", viaAdm: "Braco", descricao: "Vacina HPV"))
+        
+        
+        todasAsVacinas.append(vacinas1)
+        
+        todasAsVacinas.append(vacinas2)
+        
+        todasAsVacinas.append(vacinas3)
+        
+        todasAsVacinas.append(vacinas4)
+        
+        todasAsVacinas.append(vacinas5)
+        
+        return todasAsVacinas
     }
     
 }

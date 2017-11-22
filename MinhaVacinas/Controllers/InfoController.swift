@@ -14,8 +14,8 @@ class InfoController: UIViewController,UITableViewDataSource, UITableViewDelegat
     @IBOutlet weak var navegacaoSegmentInfo: UISegmentedControl!
     @IBOutlet weak var listaVacinas: UITableView!
     
-    var vacinas = NetworkDAO.retornaFakeVacinas()
-    
+    var vacinas = VacinasDAO.retornaFakeVacinas()
+    var sessoes = VacinasDAO.categorias
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +23,8 @@ class InfoController: UIViewController,UITableViewDataSource, UITableViewDelegat
         // Do any additional setup after loading the view.
         listaVacinas.delegate = self
         listaVacinas.dataSource = self
+        
+        //print(vacinas)
         
     }
 
@@ -42,19 +44,31 @@ class InfoController: UIViewController,UITableViewDataSource, UITableViewDelegat
     }
     */
     
-    // numero de linhas na tabela
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return vacinas.count
+    // Configuracoes da table view
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return sessoes[section]
     }
     
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return sessoes.count
+    }
     
+    // Numero de linhas em cada sessao
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return vacinas[section].count
+    }
+    
+    // Configurando as celulas da tableView
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell:UITableViewCell = self.listaVacinas.dequeueReusableCell(withIdentifier: "Vacina") as UITableViewCell!
-         let vacina = vacinas[indexPath.row]
-         cell.textLabel?.text = vacina.doenca
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Vacina", for: indexPath)
+        
+        let vacina = vacinas[indexPath.section][indexPath.row]
+        
+        cell.textLabel?.text = vacina.vacina
         
         return cell
     }
+    
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell = listaVacinas.cellForRow(at: indexPath)
@@ -62,11 +76,17 @@ class InfoController: UIViewController,UITableViewDataSource, UITableViewDelegat
         performSegue(withIdentifier: "detalheVacina", sender: cell)
     }
     
+    
+    
+    
+    
+    
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "detalheVacina" {
             if let posicao = listaVacinas.indexPathForSelectedRow {
                 let controller = segue.destination as! DetalheVacina
-                let vacina = vacinas[posicao.row]
+                let vacina = vacinas[posicao.section][posicao.row]
                 
                 
                 controller.nome = vacina.vacina
