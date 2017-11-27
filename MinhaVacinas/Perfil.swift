@@ -11,13 +11,13 @@ import UIKit
 
 struct Perfil {
     
-    let name : String
-    let age : String
-    let image : UIImage?
+    var id : String = ""
+    var name : String = ""
+    var born : String = ""
+    var sex : String = ""
+    var image : UIImage? = nil
     
-    init(name : String,age : String, image : UIImage?) {
-        self.name = name
-        self.age = age
-        self.image = image
+    func setImageBase64(_ string : String){
+        
     }
 }

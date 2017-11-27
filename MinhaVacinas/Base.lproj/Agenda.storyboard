@@ -295,6 +295,9 @@
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" title="Salvar" id="CXX-RX-3CX">
                                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <connections>
+                                                <action selector="cadastrar:" destination="SFX-RG-Kkc" id="yPo-VP-RV0"/>
+                                            </connections>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>
@@ -389,6 +392,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="btCadastrar" destination="CXX-RX-3CX" id="901-yv-fZe"/>
                         <outlet property="btCancelar" destination="uAD-By-avf" id="6vG-Yn-pBK"/>
                         <outlet property="myBorn" destination="AZU-aP-67L" id="9kl-gx-wD3"/>
                         <outlet property="myButtonImage" destination="Yp7-YJ-Gea" id="cUR-yE-dfr"/>
