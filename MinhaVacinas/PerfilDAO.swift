@@ -24,20 +24,26 @@ class PerfilDAO{
         self.ref.childByAutoId().setValue(perfil)
     }
     
-    static func listAll(onComplete : @escaping ((_ perfil : Perfil) -> Void) ){
-        self.ref.observeSingleEvent(of: .childAdded, with: { (snapshot) in
-            
+    // lista todos os perfis, criando um onComplete para finalizar o request
+    static func listAll(onComplete : @escaping ((_ perfis : [Perfil]?) -> Void) ){
+        
+        self.ref.observe(.value, with: { (snapshot) in
+            var arrayPerfil : [Perfil] = []
             let value = snapshot.value as? NSDictionary
-            var perfil : Perfil = Perfil()
-            
-            perfil.id = snapshot.key
-            perfil.name = value?["name"] as? String ?? ""
-            perfil.born = value?["born"] as? String ?? ""
-            perfil.sex = value?["sex"] as? String ?? ""
-            
-            onComplete(perfil)
+            for child in value! {
+                if let perfilValue = child.value as? NSDictionary {
+                    var perfil : Perfil = Perfil()
+                    perfil.id = child.key as! String
+                    perfil.name = perfilValue["name"] as? String ?? ""
+                    perfil.born = perfilValue["born"] as? String ?? ""
+                    perfil.sex = perfilValue["sex"] as? String ?? ""
+                    arrayPerfil.append(perfil)
+                }
+            }
+            onComplete(arrayPerfil)
         
         }) { (error) in
+            onComplete(nil)
             print(error.localizedDescription)
         }
     }
