@@ -17,6 +17,8 @@ class InfoController: UIViewController,UITableViewDataSource, UITableViewDelegat
     var vacinas = VacinasDAO.retornaFakeVacinas()
     var sessoes = VacinasDAO.categorias
     
+    
+    
     // Informacoes Perguntas
     var perguntas = PerguntaDao.perguntas
     var sessoesPerguntas = PerguntaDao.categorias
@@ -96,6 +98,9 @@ class InfoController: UIViewController,UITableViewDataSource, UITableViewDelegat
         let cell = listaVacinas.cellForRow(at: indexPath)
         
         performSegue(withIdentifier: "detalheVacina", sender: cell)
+        
+        
+        
     }
     
     
@@ -113,11 +118,17 @@ class InfoController: UIViewController,UITableViewDataSource, UITableViewDelegat
         if segue.identifier == "detalheVacina" {
             if let posicao = listaVacinas.indexPathForSelectedRow {
                 let controller = segue.destination as! DetalheVacina
-                let vacina = vacinas[posicao.section][posicao.row]
                 
+                if navegacaoSegmentInfo.selectedSegmentIndex == 0 {
+                    let vacina = vacinas[posicao.section][posicao.row]
+                    controller.nome = vacina.vacina
+                    controller.descricao = vacina.descricao
+                } else {
+                    let pergunta = perguntas[posicao.row]
+                    controller.nome = pergunta.pergunta
+                    controller.descricao = pergunta.resposta
+                }
                 
-                controller.nome = vacina.vacina
-                controller.descricao = vacina.descricao
                 
             }
         }
