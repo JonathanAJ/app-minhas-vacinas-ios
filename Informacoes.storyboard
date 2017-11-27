@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -40,18 +41,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="MLt-de-hN3">
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="MLt-de-hN3">
                                 <rect key="frame" x="16" y="72" width="343" height="29"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="28" id="g5L-Rs-heR"/>
+                                </constraints>
                                 <segments>
                                     <segment title="Vacinas"/>
                                     <segment title="Perguntas"/>
                                 </segments>
                             </segmentedControl>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" sectionIndexMinimumDisplayRowCount="1" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6nG-cT-5Kf">
-                                <rect key="frame" x="16" y="122" width="343" height="488"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" sectionIndexMinimumDisplayRowCount="1" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6nG-cT-5Kf">
+                                <rect key="frame" x="16" y="120" width="343" height="490"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Vacina" id="NhU-Tw-GuD">
@@ -66,6 +68,15 @@
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="6nG-cT-5Kf" firstAttribute="trailing" secondItem="AkD-Lu-bGo" secondAttribute="trailingMargin" id="KVR-Y2-O6x"/>
+                            <constraint firstItem="MLt-de-hN3" firstAttribute="top" secondItem="97X-dr-pHX" secondAttribute="bottom" constant="8" id="NiO-Nc-LiY"/>
+                            <constraint firstItem="6nG-cT-5Kf" firstAttribute="leading" secondItem="AkD-Lu-bGo" secondAttribute="leadingMargin" id="dEM-8P-ZaE"/>
+                            <constraint firstItem="MLt-de-hN3" firstAttribute="trailing" secondItem="AkD-Lu-bGo" secondAttribute="trailingMargin" id="gxz-Rf-sma"/>
+                            <constraint firstItem="MLt-de-hN3" firstAttribute="leading" secondItem="AkD-Lu-bGo" secondAttribute="leadingMargin" id="rRd-pI-MeW"/>
+                            <constraint firstItem="kUY-QZ-jZ4" firstAttribute="top" secondItem="6nG-cT-5Kf" secondAttribute="bottom" constant="8" id="xhy-99-jCX"/>
+                            <constraint firstItem="6nG-cT-5Kf" firstAttribute="top" secondItem="MLt-de-hN3" secondAttribute="bottom" constant="20" id="ygz-X1-3Gs"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="listaVacinas" destination="6nG-cT-5Kf" id="zCB-oi-uot"/>
@@ -89,16 +100,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gb4-1T-DSL">
-                                <rect key="frame" x="159" y="72" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gb4-1T-DSL">
+                                <rect key="frame" x="166.5" y="72" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="miV-NT-e5C">
-                                <rect key="frame" x="16" y="111" width="343" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="miV-NT-e5C">
+                                <rect key="frame" x="16" y="113" width="343" height="266"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -106,6 +115,15 @@
                             </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="mrq-YW-z3b" firstAttribute="top" secondItem="miV-NT-e5C" secondAttribute="bottom" constant="239" id="8xY-5x-ZIM"/>
+                            <constraint firstItem="miV-NT-e5C" firstAttribute="leading" secondItem="ULe-P2-jYw" secondAttribute="leadingMargin" id="NYb-f9-sPX"/>
+                            <constraint firstItem="miV-NT-e5C" firstAttribute="trailing" secondItem="ULe-P2-jYw" secondAttribute="trailingMargin" id="ONa-Gw-P9m"/>
+                            <constraint firstItem="gb4-1T-DSL" firstAttribute="centerX" secondItem="ULe-P2-jYw" secondAttribute="centerX" id="UPA-oy-Oqh"/>
+                            <constraint firstItem="miV-NT-e5C" firstAttribute="top" secondItem="gb4-1T-DSL" secondAttribute="bottom" constant="20" id="iRE-cn-Tqu"/>
+                            <constraint firstItem="miV-NT-e5C" firstAttribute="top" secondItem="gb4-1T-DSL" secondAttribute="bottom" constant="20" id="s7X-ko-rDx"/>
+                            <constraint firstItem="gb4-1T-DSL" firstAttribute="top" secondItem="tZS-0v-gdd" secondAttribute="bottom" constant="8" id="vrh-t7-sBK"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="detalheVacina" destination="miV-NT-e5C" id="nPK-AG-DdD"/>
