@@ -25,6 +25,7 @@ class AgendaController: UIViewController, UICollectionViewDataSource, UICollecti
         collectionView.dataSource = self
         collectionView.delegate = self
         
+
         PerfilDAO.listAll(onComplete:  { perfis in
             
             self.dataPerfis = perfis!
