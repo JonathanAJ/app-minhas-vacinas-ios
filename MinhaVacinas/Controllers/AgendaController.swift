@@ -25,7 +25,12 @@ class AgendaController: UIViewController, UICollectionViewDataSource, UICollecti
         collectionView.dataSource = self
         collectionView.delegate = self
         
-        //PerfilDAO.listAll(onComplete: <#((Perfil) -> Void)#>)
+
+        PerfilDAO.listAll(onComplete:  { perfis in
+            
+            self.dataPerfis = perfis!
+            self.collectionView.reloadData()
+        })
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
