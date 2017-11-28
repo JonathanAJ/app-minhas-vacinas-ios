@@ -12,6 +12,7 @@ class CadastroController: UIViewController, UIImagePickerControllerDelegate, UIN
 
     @IBOutlet weak var btCancelar: UIBarButtonItem!
     
+    @IBOutlet weak var btCadastrar: UIBarButtonItem!
     
     @IBOutlet weak var myButtonImage: UIButton!
     @IBOutlet weak var myName: UITextField!
@@ -20,6 +21,18 @@ class CadastroController: UIViewController, UIImagePickerControllerDelegate, UIN
     
     @IBAction func cancelar(_ sender: UIBarButtonItem) {
         self.dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func cadastrar(_ sender: UIBarButtonItem) {
+        self.dismiss(animated: true, completion: nil)
+        
+        let myPerfil = Perfil.init(id : "",
+                                   name : myName.text!,
+                                   born : myBorn.date.description,
+                                   sex : mySex.selectedSegmentIndex == 0 ? "M" : "F",
+                                   image: nil)
+        
+        PerfilDAO.create(perfil: myPerfil)
     }
     
     @IBAction func getImage(_ sender: UIButton) {

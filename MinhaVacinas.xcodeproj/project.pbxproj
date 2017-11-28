@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		28B21C2A1FCDCBE700ED4AB2 /* Pods_MinhaVacinas.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28B21C291FCDCBE700ED4AB2 /* Pods_MinhaVacinas.framework */; };
 		28ED6D931FBB60A1009F880A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28ED6D921FBB60A1009F880A /* AppDelegate.swift */; };
 		28ED6D9A1FBB60A1009F880A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28ED6D991FBB60A1009F880A /* Assets.xcassets */; };
 		28ED6DA81FBB60A2009F880A /* MinhaVacinasTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28ED6DA71FBB60A2009F880A /* MinhaVacinasTests.swift */; };
@@ -15,12 +16,11 @@
 		28ED6DE21FC34AEB009F880A /* Vacinas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28ED6DE11FC34AEB009F880A /* Vacinas.swift */; };
 		28ED6DE71FC34BCE009F880A /* NetworkDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28ED6DE61FC34BCE009F880A /* NetworkDAO.swift */; };
 		28ED6DE91FC4A58F009F880A /* DetalheVacina.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28ED6DE81FC4A58F009F880A /* DetalheVacina.swift */; };
-
-		3E1070A01FC5FEE60077E040 /* CircleProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E10709F1FC5FEE60077E040 /* CircleProgressView.swift */; };
-
 		28ED6DEB1FC624C5009F880A /* Pergunta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28ED6DEA1FC624C5009F880A /* Pergunta.swift */; };
 		28ED6DED1FC625AD009F880A /* PerguntaDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28ED6DEC1FC625AD009F880A /* PerguntaDAO.swift */; };
-
+		3E1070A01FC5FEE60077E040 /* CircleProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E10709F1FC5FEE60077E040 /* CircleProgressView.swift */; };
+		3E1070A21FCC894F0077E040 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3E1070A11FCC894F0077E040 /* GoogleService-Info.plist */; };
+		3E1070A41FCC8FF90077E040 /* PerfilDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E1070A31FCC8FF90077E040 /* PerfilDAO.swift */; };
 		3E7FA9D81FC49FA7002DD752 /* MyCollectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E7FA9D71FC49FA7002DD752 /* MyCollectionController.swift */; };
 		3E7FA9DA1FC4A59F002DD752 /* Perfil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E7FA9D91FC4A59F002DD752 /* Perfil.swift */; };
 		3E838EA41FBB722A00D3AC78 /* Agenda.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E838EA21FBB722A00D3AC78 /* Agenda.storyboard */; };
@@ -33,7 +33,6 @@
 		3E838EC81FC34ECE00D3AC78 /* CadastroController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E838EC71FC34ECE00D3AC78 /* CadastroController.swift */; };
 		3EC0F1BB1FBB6BE0004F1CDE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EC0F1B81FBB6BE0004F1CDE /* LaunchScreen.storyboard */; };
 		6484955B341781BEF17871D7 /* Pods_MinhaVacinasUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF0724FD108888C999BD34F6 /* Pods_MinhaVacinasUITests.framework */; };
-		97A0B228D37726614D10FFA3 /* Pods_MinhaVacinas.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F38B53D00772C7CC9D207A8A /* Pods_MinhaVacinas.framework */; };
 		B188F3D57F13895684D9EB89 /* Pods_MinhaVacinasTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B2F3016D01BA0AB87AABA67 /* Pods_MinhaVacinasTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -57,6 +56,8 @@
 /* Begin PBXFileReference section */
 		0C37B18FD048C67D79BA0854 /* Pods-MinhaVacinas.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MinhaVacinas.release.xcconfig"; path = "Pods/Target Support Files/Pods-MinhaVacinas/Pods-MinhaVacinas.release.xcconfig"; sourceTree = "<group>"; };
 		18671F96E794B07C3F48885F /* Pods-MinhaVacinas.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MinhaVacinas.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MinhaVacinas/Pods-MinhaVacinas.debug.xcconfig"; sourceTree = "<group>"; };
+		28B21C251FCDCB9100ED4AB2 /* Pods_MinhaVacinas.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_MinhaVacinas.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		28B21C291FCDCBE700ED4AB2 /* Pods_MinhaVacinas.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods_MinhaVacinas.framework; path = "../../Library/Developer/Xcode/DerivedData/MinhaVacinas-cyluzqfseydtvdgptefhcztyybgn/Build/Products/Debug-iphonesimulator/Pods_MinhaVacinas.framework"; sourceTree = "<group>"; };
 		28ED6D8F1FBB60A1009F880A /* MinhaVacinas.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MinhaVacinas.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		28ED6D921FBB60A1009F880A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		28ED6D991FBB60A1009F880A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -71,12 +72,11 @@
 		28ED6DE11FC34AEB009F880A /* Vacinas.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vacinas.swift; sourceTree = "<group>"; };
 		28ED6DE61FC34BCE009F880A /* NetworkDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NetworkDAO.swift; path = Controllers/NetworkDAO.swift; sourceTree = "<group>"; };
 		28ED6DE81FC4A58F009F880A /* DetalheVacina.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetalheVacina.swift; sourceTree = "<group>"; };
-
-		3E10709F1FC5FEE60077E040 /* CircleProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CircleProgressView.swift; path = MinhaVacinas/CircleProgressView.swift; sourceTree = SOURCE_ROOT; };
-
 		28ED6DEA1FC624C5009F880A /* Pergunta.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pergunta.swift; sourceTree = "<group>"; };
 		28ED6DEC1FC625AD009F880A /* PerguntaDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PerguntaDAO.swift; sourceTree = "<group>"; };
-
+		3E10709F1FC5FEE60077E040 /* CircleProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CircleProgressView.swift; path = MinhaVacinas/CircleProgressView.swift; sourceTree = SOURCE_ROOT; };
+		3E1070A11FCC894F0077E040 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		3E1070A31FCC8FF90077E040 /* PerfilDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerfilDAO.swift; sourceTree = "<group>"; };
 		3E7FA9D71FC49FA7002DD752 /* MyCollectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCollectionController.swift; sourceTree = "<group>"; };
 		3E7FA9D91FC4A59F002DD752 /* Perfil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Perfil.swift; sourceTree = "<group>"; };
 		3E838EA31FBB722A00D3AC78 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = MinhaVacinas/Base.lproj/Agenda.storyboard; sourceTree = SOURCE_ROOT; };
@@ -102,7 +102,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				97A0B228D37726614D10FFA3 /* Pods_MinhaVacinas.framework in Frameworks */,
+				28B21C2A1FCDCBE700ED4AB2 /* Pods_MinhaVacinas.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -128,6 +128,7 @@
 		239C2F75B5621B0DE790ECCF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				28B21C291FCDCBE700ED4AB2 /* Pods_MinhaVacinas.framework */,
 				F38B53D00772C7CC9D207A8A /* Pods_MinhaVacinas.framework */,
 				6B2F3016D01BA0AB87AABA67 /* Pods_MinhaVacinasTests.framework */,
 				CF0724FD108888C999BD34F6 /* Pods_MinhaVacinasUITests.framework */,
@@ -151,6 +152,7 @@
 		28ED6D861FBB60A1009F880A = {
 			isa = PBXGroup;
 			children = (
+				28B21C251FCDCB9100ED4AB2 /* Pods_MinhaVacinas.framework */,
 				28ED6D911FBB60A1009F880A /* MinhaVacinas */,
 				28ED6DA61FBB60A2009F880A /* MinhaVacinasTests */,
 				28ED6DB11FBB60A2009F880A /* MinhaVacinasUITests */,
@@ -181,6 +183,7 @@
 				28ED6D921FBB60A1009F880A /* AppDelegate.swift */,
 				28ED6D991FBB60A1009F880A /* Assets.xcassets */,
 				28ED6D9E1FBB60A1009F880A /* Info.plist */,
+				3E1070A11FCC894F0077E040 /* GoogleService-Info.plist */,
 			);
 			path = MinhaVacinas;
 			sourceTree = "<group>";
@@ -218,6 +221,7 @@
 			children = (
 				28ED6DE61FC34BCE009F880A /* NetworkDAO.swift */,
 				28ED6DEC1FC625AD009F880A /* PerguntaDAO.swift */,
+				3E1070A31FCC8FF90077E040 /* PerfilDAO.swift */,
 			);
 			name = DAO;
 			sourceTree = "<group>";
@@ -373,6 +377,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3E838EA41FBB722A00D3AC78 /* Agenda.storyboard in Resources */,
+				3E1070A21FCC894F0077E040 /* GoogleService-Info.plist in Resources */,
 				3E838EC11FBB740900D3AC78 /* Sobre.storyboard in Resources */,
 				3EC0F1BB1FBB6BE0004F1CDE /* LaunchScreen.storyboard in Resources */,
 				3E838EAC1FBB72DB00D3AC78 /* Informacoes.storyboard in Resources */,
@@ -561,15 +566,12 @@
 				3E838EC41FBB75B000D3AC78 /* ViewController.swift in Sources */,
 				3E1070A01FC5FEE60077E040 /* CircleProgressView.swift in Sources */,
 				28ED6D931FBB60A1009F880A /* AppDelegate.swift in Sources */,
+				3E1070A41FCC8FF90077E040 /* PerfilDAO.swift in Sources */,
 				3E838EC61FBB75D600D3AC78 /* AgendaController.swift in Sources */,
 				28ED6DE21FC34AEB009F880A /* Vacinas.swift in Sources */,
 				3E7FA9DA1FC4A59F002DD752 /* Perfil.swift in Sources */,
 				3E7FA9D81FC49FA7002DD752 /* MyCollectionController.swift in Sources */,
-
-
 				28ED6DEB1FC624C5009F880A /* Pergunta.swift in Sources */,
-				3E838ED31FC367CA00D3AC78 /* CircleProgressView.swift in Sources */,
-
 				28ED6DE91FC4A58F009F880A /* DetalheVacina.swift in Sources */,
 				28ED6DDA1FBE090F009F880A /* InfoController.swift in Sources */,
 				28ED6DED1FC625AD009F880A /* PerguntaDAO.swift in Sources */,
@@ -749,10 +751,11 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 18671F96E794B07C3F48885F /* Pods-MinhaVacinas.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = MinhaVacinas/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = alysongirao.MinhaVacinas;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bepid.minhavacinas;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -762,10 +765,11 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 0C37B18FD048C67D79BA0854 /* Pods-MinhaVacinas.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = MinhaVacinas/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = alysongirao.MinhaVacinas;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bepid.minhavacinas;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};

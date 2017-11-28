@@ -25,12 +25,7 @@ class AgendaController: UIViewController, UICollectionViewDataSource, UICollecti
         collectionView.dataSource = self
         collectionView.delegate = self
         
-        dataPerfis.append(Perfil(name: "Teste Teste da Silva", age: "10 anos", image: nil))
-        dataPerfis.append(Perfil(name: "Teste2", age: "8 anos", image: nil))
-        dataPerfis.append(Perfil(name: "Teste3", age: "3 anos", image: nil))
-        dataPerfis.append(Perfil(name: "Teste3", age: "3 anos", image: nil))
-        dataPerfis.append(Perfil(name: "Teste3", age: "3 anos", image: nil))
-        dataPerfis.append(Perfil(name: "Teste3", age: "3 anos", image: nil))
+        //PerfilDAO.listAll(onComplete: <#((Perfil) -> Void)#>)
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -48,7 +43,7 @@ class AgendaController: UIViewController, UICollectionViewDataSource, UICollecti
         
         myCell.displayCell(image: dataPerfis[indexPath.row].image,
                            name: dataPerfis[indexPath.row].name,
-                           age: dataPerfis[indexPath.row].age)
+                           age: dataPerfis[indexPath.row].born)
         
         return myCell
     }

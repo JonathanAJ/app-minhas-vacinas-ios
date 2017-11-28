@@ -9,6 +9,6 @@
 import UIKit
 
 struct Pergunta {
-    let pergunta: String
-    let resposta: String
+    var pergunta: String = ""
+    var resposta: String = ""
 }

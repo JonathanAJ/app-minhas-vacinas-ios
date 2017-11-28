@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AD_UNIT_ID_FOR_BANNER_TEST</key>
+	<string>ca-app-pub-3940256099942544/2934735716</string>
+	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
+	<string>ca-app-pub-3940256099942544/4411468910</string>
+	<key>CLIENT_ID</key>
+	<string>677924227175-st4u5o8d5d0i1alkqrqbhf3a205mluhk.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.677924227175-st4u5o8d5d0i1alkqrqbhf3a205mluhk</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCFSYRV66UXRerY_C1jF0uvjh_T3vGShao</string>
+	<key>GCM_SENDER_ID</key>
+	<string>677924227175</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.bepid.minhavacinas</string>
+	<key>PROJECT_ID</key>
+	<string>appminhasvacinas</string>
+	<key>STORAGE_BUCKET</key>
+	<string>appminhasvacinas.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<true></true>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<false></false>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:677924227175:ios:785dd14c17884609</string>
+	<key>DATABASE_URL</key>
+	<string>https://appminhasvacinas.firebaseio.com</string>
+</dict>
+</plist>
