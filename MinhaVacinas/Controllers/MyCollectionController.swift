@@ -19,7 +19,6 @@ class MyCollectionCellController: UICollectionViewCell {
         
         self.myImage.layer.masksToBounds = true
         self.myImage.layer.cornerRadius = myImage.frame.height * 0.5
-        self.myImage.layer.borderWidth = 1.0
     }
     
     func displayCell(image : UIImage?, name : String, age : String){

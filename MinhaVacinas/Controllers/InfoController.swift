@@ -29,7 +29,7 @@ class InfoController: UIViewController,UITableViewDataSource, UITableViewDelegat
         // Do any additional setup after loading the view.
         listaVacinas.delegate = self
         listaVacinas.dataSource = self
-        PerguntaDao.listAll()
+//        PerguntaDao.listAll()
         //print(vacinas)
         
     }

@@ -15,6 +15,7 @@ class AgendaController: UIViewController, UICollectionViewDataSource, UICollecti
     @IBOutlet weak var collectionView: UICollectionView!
     
     var dataPerfis : [Perfil] = []
+    var selectPerfil : Perfil? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,10 +26,12 @@ class AgendaController: UIViewController, UICollectionViewDataSource, UICollecti
         collectionView.dataSource = self
         collectionView.delegate = self
         
-
         PerfilDAO.listAll(onComplete:  { perfis in
-            
-            self.dataPerfis = perfis!
+            if perfis != nil {
+                self.dataPerfis = perfis!
+            }else{
+                self.dataPerfis = []
+            }
             self.collectionView.reloadData()
         })
     }
@@ -38,8 +41,14 @@ class AgendaController: UIViewController, UICollectionViewDataSource, UICollecti
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print(dataPerfis[indexPath.row].name)
+        self.selectPerfil = dataPerfis[indexPath.row]
         performSegue(withIdentifier: "seguePerfil", sender: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = segue.destination as? PerfilController {
+            destination.myPerfil = self.selectPerfil
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -48,7 +57,7 @@ class AgendaController: UIViewController, UICollectionViewDataSource, UICollecti
         
         myCell.displayCell(image: dataPerfis[indexPath.row].image,
                            name: dataPerfis[indexPath.row].name,
-                           age: dataPerfis[indexPath.row].born)
+                           age: dataPerfis[indexPath.row].age)
         
         return myCell
     }

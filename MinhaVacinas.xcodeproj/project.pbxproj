@@ -16,19 +16,12 @@
 		28ED6DE21FC34AEB009F880A /* Vacinas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28ED6DE11FC34AEB009F880A /* Vacinas.swift */; };
 		28ED6DE71FC34BCE009F880A /* NetworkDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28ED6DE61FC34BCE009F880A /* NetworkDAO.swift */; };
 		28ED6DE91FC4A58F009F880A /* DetalheVacina.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28ED6DE81FC4A58F009F880A /* DetalheVacina.swift */; };
-
-
-		3E1070A01FC5FEE60077E040 /* CircleProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E10709F1FC5FEE60077E040 /* CircleProgressView.swift */; };
-
-		3E1070A21FCC894F0077E040 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3E1070A11FCC894F0077E040 /* GoogleService-Info.plist */; };
-		3E1070A41FCC8FF90077E040 /* PerfilDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E1070A31FCC8FF90077E040 /* PerfilDAO.swift */; };
-
-
 		28ED6DEB1FC624C5009F880A /* Pergunta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28ED6DEA1FC624C5009F880A /* Pergunta.swift */; };
 		28ED6DED1FC625AD009F880A /* PerguntaDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28ED6DEC1FC625AD009F880A /* PerguntaDAO.swift */; };
-
-
-
+		3E1070A01FC5FEE60077E040 /* CircleProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E10709F1FC5FEE60077E040 /* CircleProgressView.swift */; };
+		3E1070A21FCC894F0077E040 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3E1070A11FCC894F0077E040 /* GoogleService-Info.plist */; };
+		3E1070A41FCC8FF90077E040 /* PerfilDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E1070A31FCC8FF90077E040 /* PerfilDAO.swift */; };
+		3E1070A61FCDFB5F0077E040 /* PerfilController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E1070A51FCDFB5F0077E040 /* PerfilController.swift */; };
 		3E7FA9D81FC49FA7002DD752 /* MyCollectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E7FA9D71FC49FA7002DD752 /* MyCollectionController.swift */; };
 		3E7FA9DA1FC4A59F002DD752 /* Perfil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E7FA9D91FC4A59F002DD752 /* Perfil.swift */; };
 		3E838EA41FBB722A00D3AC78 /* Agenda.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E838EA21FBB722A00D3AC78 /* Agenda.storyboard */; };
@@ -80,19 +73,12 @@
 		28ED6DE11FC34AEB009F880A /* Vacinas.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vacinas.swift; sourceTree = "<group>"; };
 		28ED6DE61FC34BCE009F880A /* NetworkDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NetworkDAO.swift; path = Controllers/NetworkDAO.swift; sourceTree = "<group>"; };
 		28ED6DE81FC4A58F009F880A /* DetalheVacina.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetalheVacina.swift; sourceTree = "<group>"; };
-
-
-		3E10709F1FC5FEE60077E040 /* CircleProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CircleProgressView.swift; path = MinhaVacinas/CircleProgressView.swift; sourceTree = SOURCE_ROOT; };
-
-		3E1070A11FCC894F0077E040 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		3E1070A31FCC8FF90077E040 /* PerfilDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerfilDAO.swift; sourceTree = "<group>"; };
-
-
 		28ED6DEA1FC624C5009F880A /* Pergunta.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pergunta.swift; sourceTree = "<group>"; };
 		28ED6DEC1FC625AD009F880A /* PerguntaDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PerguntaDAO.swift; sourceTree = "<group>"; };
-
-
-
+		3E10709F1FC5FEE60077E040 /* CircleProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CircleProgressView.swift; path = MinhaVacinas/CircleProgressView.swift; sourceTree = SOURCE_ROOT; };
+		3E1070A11FCC894F0077E040 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		3E1070A31FCC8FF90077E040 /* PerfilDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerfilDAO.swift; sourceTree = "<group>"; };
+		3E1070A51FCDFB5F0077E040 /* PerfilController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerfilController.swift; sourceTree = "<group>"; };
 		3E7FA9D71FC49FA7002DD752 /* MyCollectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCollectionController.swift; sourceTree = "<group>"; };
 		3E7FA9D91FC4A59F002DD752 /* Perfil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Perfil.swift; sourceTree = "<group>"; };
 		3E838EA31FBB722A00D3AC78 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = MinhaVacinas/Base.lproj/Agenda.storyboard; sourceTree = SOURCE_ROOT; };
@@ -236,11 +222,8 @@
 			isa = PBXGroup;
 			children = (
 				28ED6DE61FC34BCE009F880A /* NetworkDAO.swift */,
-
 				3E1070A31FCC8FF90077E040 /* PerfilDAO.swift */,
-
 				28ED6DEC1FC625AD009F880A /* PerguntaDAO.swift */,
-
 			);
 			name = DAO;
 			sourceTree = "<group>";
@@ -262,6 +245,7 @@
 				28ED6DD91FBE090F009F880A /* InfoController.swift */,
 				3E7FA9D71FC49FA7002DD752 /* MyCollectionController.swift */,
 				28ED6DE81FC4A58F009F880A /* DetalheVacina.swift */,
+				3E1070A51FCDFB5F0077E040 /* PerfilController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -595,6 +579,7 @@
 				28ED6DDA1FBE090F009F880A /* InfoController.swift in Sources */,
 				28ED6DED1FC625AD009F880A /* PerguntaDAO.swift in Sources */,
 				28ED6DE71FC34BCE009F880A /* NetworkDAO.swift in Sources */,
+				3E1070A61FCDFB5F0077E040 /* PerfilController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
