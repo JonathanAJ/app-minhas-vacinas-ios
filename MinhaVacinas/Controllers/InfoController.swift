@@ -17,6 +17,12 @@ class InfoController: UIViewController,UITableViewDataSource, UITableViewDelegat
     var vacinas = VacinasDAO.retornaFakeVacinas()
     var sessoes = VacinasDAO.categorias
     
+    
+    
+    // Informacoes Perguntas
+    var perguntas = PerguntaDao.perguntas
+    var sessoesPerguntas = PerguntaDao.categorias
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -46,27 +52,45 @@ class InfoController: UIViewController,UITableViewDataSource, UITableViewDelegat
     
     // Configuracoes da table view
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return sessoes[section]
+        if navegacaoSegmentInfo.selectedSegmentIndex == 0 {
+            return sessoes[section]
+        } else {
+            return sessoesPerguntas[section]
+        }
+        
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return sessoes.count
+        if navegacaoSegmentInfo.selectedSegmentIndex == 0 {
+            return sessoes.count
+        }
+        return sessoesPerguntas.count
+        
     }
     
     // Numero de linhas em cada sessao
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return vacinas[section].count
+        if navegacaoSegmentInfo.selectedSegmentIndex == 0 {
+            return vacinas[section].count
+        }
+        return perguntas.count
     }
     
     // Configurando as celulas da tableView
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Vacina", for: indexPath)
         
-        let vacina = vacinas[indexPath.section][indexPath.row]
-        
-        cell.textLabel?.text = vacina.vacina
+        if navegacaoSegmentInfo.selectedSegmentIndex == 0 {
+            let vacina = vacinas[indexPath.section][indexPath.row]
+            cell.textLabel?.text = vacina.vacina
+            
+            return cell
+        }
+        let pergunta = perguntas[indexPath.row]
+        cell.textLabel?.text = pergunta.pergunta
         
         return cell
+        
     }
     
     
@@ -74,6 +98,14 @@ class InfoController: UIViewController,UITableViewDataSource, UITableViewDelegat
         let cell = listaVacinas.cellForRow(at: indexPath)
         
         performSegue(withIdentifier: "detalheVacina", sender: cell)
+        
+        
+        
+    }
+    
+    
+    @IBAction func atualizarTable(_ sender: UISegmentedControl) {
+        listaVacinas.reloadData()
     }
     
     
@@ -86,11 +118,17 @@ class InfoController: UIViewController,UITableViewDataSource, UITableViewDelegat
         if segue.identifier == "detalheVacina" {
             if let posicao = listaVacinas.indexPathForSelectedRow {
                 let controller = segue.destination as! DetalheVacina
-                let vacina = vacinas[posicao.section][posicao.row]
                 
+                if navegacaoSegmentInfo.selectedSegmentIndex == 0 {
+                    let vacina = vacinas[posicao.section][posicao.row]
+                    controller.nome = vacina.vacina
+                    controller.descricao = vacina.descricao
+                } else {
+                    let pergunta = perguntas[posicao.row]
+                    controller.nome = pergunta.pergunta
+                    controller.descricao = pergunta.resposta
+                }
                 
-                controller.nome = vacina.vacina
-                controller.descricao = vacina.descricao
                 
             }
         }

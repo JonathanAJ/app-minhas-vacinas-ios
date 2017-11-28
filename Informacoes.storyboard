@@ -51,6 +51,9 @@
                                     <segment title="Vacinas"/>
                                     <segment title="Perguntas"/>
                                 </segments>
+                                <connections>
+                                    <action selector="atualizarTable:" destination="GJ5-vB-wSu" eventType="valueChanged" id="2gt-zi-hN0"/>
+                                </connections>
                             </segmentedControl>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" sectionIndexMinimumDisplayRowCount="1" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6nG-cT-5Kf">
                                 <rect key="frame" x="16" y="120" width="343" height="490"/>

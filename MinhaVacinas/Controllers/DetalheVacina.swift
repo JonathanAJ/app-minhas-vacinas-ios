@@ -15,6 +15,9 @@ class DetalheVacina: UIViewController {
     
     @IBOutlet weak var detalheVacina: UITextView!
     
+    
+    
+    
     var nome = ""
     var descricao = ""
 
