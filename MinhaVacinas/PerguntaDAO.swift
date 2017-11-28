@@ -15,9 +15,9 @@ struct PerguntaDao {
     static let ref : DatabaseReference! =
         Database.database().reference().child("perguntas")
     
-    // onComplete : @escaping ((_ perfil : Perfil) -> Void)
     
-    static func listAll(){
+    
+    static func listAll(onComplete : @escaping ((_ perfil : Perfil) -> Void)){
         self.ref.observeSingleEvent(of: .childAdded, with: { (snapshot) in
             
             let value = snapshot.value as? NSDictionary
@@ -26,7 +26,7 @@ struct PerguntaDao {
             pergunta.pergunta = value?["pergunta"] as? String ?? ""
             pergunta.resposta = value?["resposta"] as? String ?? ""
             
-            print("Teste")
+            
             
             // onComplete(perfil)
             
