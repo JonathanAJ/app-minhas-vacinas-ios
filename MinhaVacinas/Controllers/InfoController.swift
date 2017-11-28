@@ -20,7 +20,7 @@ class InfoController: UIViewController,UITableViewDataSource, UITableViewDelegat
     
     
     // Informacoes Perguntas
-    var perguntas = PerguntaDao.perguntas
+    var perguntas = [Pergunta]()
     var sessoesPerguntas = PerguntaDao.categorias
     
     override func viewDidLoad() {
@@ -29,8 +29,12 @@ class InfoController: UIViewController,UITableViewDataSource, UITableViewDelegat
         // Do any additional setup after loading the view.
         listaVacinas.delegate = self
         listaVacinas.dataSource = self
-        PerguntaDao.listAll()
-        //print(vacinas)
+        PerguntaDao.listAll(onComplete:  { perguntas in
+            
+            self.perguntas = perguntas
+            
+        })
+        
         
     }
 
