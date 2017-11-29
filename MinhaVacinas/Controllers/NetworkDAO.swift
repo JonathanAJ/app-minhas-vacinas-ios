@@ -6,45 +6,80 @@
 //  Copyright © 2017 Alyson Brito Girão. All rights reserved.
 //
 import UIKit
+import Firebase
 
 struct VacinasDAO {
     
-    static let categorias = ["0 aos 2 anos", "4 aos 10 anos", "11 aos 19 anos", "20 aos 59 anos", "60+"]
-    static var todasAsVacinas = [[Vacina]]()
+    static let ref : DatabaseReference! =
+        Database.database().reference().child("vacinas")
+    static let categorais = ["Bebes", "Crianças", "Adolescentes", "Adultos", "Idosos"]
     
-    static func retornaFakeVacinas() -> [[Vacina]]{
-        var vacinas1 = [Vacina]()
-        vacinas1.append(Vacina(idade: "Ao nascer", vacina: "BCG", doenca:"Turberculose" , dose: "20ml", doseQtd: "2", viaAdm: "Braco", descricao: "Vacina BCG"))
-        vacinas1.append(Vacina(idade: "10 anos", vacina: "HPV", doenca: "HPV", dose: "10ml", doseQtd: "3", viaAdm: "Braco", descricao: "Vacina HPV"))
+    
+    static func listAll(onComplete : @escaping ((_ perguntas : [[Vacina]]) -> Void)){
         
-        var vacinas2 = [Vacina]()
-        vacinas2.append(Vacina(idade: "Ao nascer", vacina: "Sarampo", doenca:"Turberculose" , dose: "20ml", doseQtd: "2", viaAdm: "Braco", descricao: "Vacina BCG"))
-        vacinas2.append(Vacina(idade: "10 anos", vacina: "Gripe", doenca: "HPV", dose: "10ml", doseQtd: "3", viaAdm: "Braco", descricao: "Vacina HPV"))
+        var todasAsVacinas = [[Vacina]]()
+        var bebe = [Vacina]()
+        var crianca = [Vacina]()
+        var adolecentes = [Vacina]()
+        var adultos = [Vacina]()
+        var idoso = [Vacina]()
         
-        var vacinas3 = [Vacina]()
-        vacinas3.append(Vacina(idade: "Ao nascer", vacina: "Hepatite B", doenca:"Turberculose" , dose: "20ml", doseQtd: "2", viaAdm: "Braco", descricao: "Vacina BCG"))
-        vacinas3.append(Vacina(idade: "10 anos", vacina: "Hepatite D", doenca: "HPV", dose: "10ml", doseQtd: "3", viaAdm: "Braco", descricao: "Vacina HPV"))
+        self.ref.queryOrderedByValue().observeSingleEvent(of: .value, with: { (snapshot) in
+            let value = snapshot.value as? NSDictionary
+            
+            for categoria in value! {
+                if let categoriaValue = categoria.value as? NSArray {
+                    
+                    
+                    for vacina in categoriaValue {
+                        if let vacinaValue = vacina as? NSDictionary{
+                            var v = Vacina()
+                            v.doenca = vacinaValue["doenca_protecao"] as? String ?? ""
+                            v.idade = vacinaValue["idade"] as? String ?? ""
+                            v.vacina = vacinaValue["vacina"] as? String ?? ""
+                            v.doenca = vacinaValue["doenca_protecao"] as? String ?? ""
+                            v.doseQtd = vacinaValue["dose_qtd"] as? String ?? ""
+                            v.dose = vacinaValue["dose"] as? String ?? ""
+                            
+                            v.descricao = "Protege contra a doença(s):\n\(v.doenca)\n\nIdade recomendada:\n\(v.idade)\n\nDose:\n\(v.dose)\n\nDose Quantidade:\n\(v.doseQtd)"
+                            
+                            if categoria.key as! String == "0_bebes" {
+                                bebe.append(v)
+                            }
+                            else if categoria.key as! String == "1_criancas" {
+                                crianca.append(v)
+                            }
+                            else if categoria.key as! String == "2_adolecentes" {
+                                adolecentes.append(v)
+                            }
+                            else if categoria.key as! String == "3_adultos" {
+                                adultos.append(v)
+                            } else if categoria.key as! String == "4_idoso" {
+                                idoso.append(v)
+                            }
+                            
+                        }
         
-        var vacinas4 = [Vacina]()
-        vacinas4.append(Vacina(idade: "Ao nascer", vacina: "Influenza", doenca:"Turberculose" , dose: "20ml", doseQtd: "2", viaAdm: "Braco", descricao: "Vacina BCG"))
-        vacinas4.append(Vacina(idade: "10 anos", vacina: "Dengue", doenca: "HPV", dose: "10ml", doseQtd: "3", viaAdm: "Braco", descricao: "Vacina HPV"))
-        
-        var vacinas5 = [Vacina]()
-        vacinas5.append(Vacina(idade: "Ao nascer", vacina: "Gripe", doenca:"Turberculose" , dose: "20ml", doseQtd: "2", viaAdm: "Braco", descricao: "Vacina BCG"))
-        vacinas5.append(Vacina(idade: "10 anos", vacina: "Hepatite Z", doenca: "HPV", dose: "10ml", doseQtd: "3", viaAdm: "Braco", descricao: "Vacina HPV"))
-        
-        
-        todasAsVacinas.append(vacinas1)
-        
-        todasAsVacinas.append(vacinas2)
-        
-        todasAsVacinas.append(vacinas3)
-        
-        todasAsVacinas.append(vacinas4)
-        
-        todasAsVacinas.append(vacinas5)
-        
-        return todasAsVacinas
+                    }
+                    
+                }
+                
+            
+            
+            }
+            todasAsVacinas.append(bebe)
+            todasAsVacinas.append(crianca)
+            todasAsVacinas.append(adolecentes)
+            todasAsVacinas.append(adultos)
+            todasAsVacinas.append(idoso)
+            
+            
+            
+            onComplete(todasAsVacinas)
+            
+        }) { (error) in
+            print(error.localizedDescription)
+        }
     }
     
 }

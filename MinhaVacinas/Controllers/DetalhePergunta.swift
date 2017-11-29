@@ -1,25 +1,14 @@
 //
-//  DetalheVacina.swift
+//  DetalhePergunta.swift
 //  MinhaVacinas
 //
-//  Created by Alyson Brito Girão on 21/11/17.
+//  Created by Alyson Brito Girão on 29/11/17.
 //  Copyright © 2017 Alyson Brito Girão. All rights reserved.
 //
 
 import UIKit
 
-class DetalheVacina: UIViewController {
-    
-    
-    @IBOutlet weak var nomeVacina: UILabel!
-    
-    @IBOutlet weak var detalheVacina: UITextView!
-    
-    
-    
-    
-    var nome = ""
-    var descricao = ""
+class DetalhePergunta: UIViewController {
 
     @IBAction func close(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
@@ -27,9 +16,6 @@ class DetalheVacina: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        nomeVacina.text = nome
-        detalheVacina.text = descricao
 
         // Do any additional setup after loading the view.
     }
@@ -38,8 +24,6 @@ class DetalheVacina: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    
     
 
     /*

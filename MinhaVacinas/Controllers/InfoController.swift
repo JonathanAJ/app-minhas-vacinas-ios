@@ -14,8 +14,8 @@ class InfoController: UIViewController,UITableViewDataSource, UITableViewDelegat
     @IBOutlet weak var navegacaoSegmentInfo: UISegmentedControl!
     @IBOutlet weak var listaVacinas: UITableView!
     
-    var vacinas = VacinasDAO.retornaFakeVacinas()
-    var sessoes = VacinasDAO.categorias
+    var vacinas = [[Vacina]]()
+    var sessoes: [String] = []
     
     
     
@@ -33,6 +33,12 @@ class InfoController: UIViewController,UITableViewDataSource, UITableViewDelegat
             
             self.perguntas = perguntas
             
+        })
+        
+        VacinasDAO.listAll(onComplete: { vacinas in
+            self.vacinas = vacinas
+            self.sessoes = VacinasDAO.categorais
+            self.listaVacinas.reloadData()
         })
         
         
@@ -101,9 +107,14 @@ class InfoController: UIViewController,UITableViewDataSource, UITableViewDelegat
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell = listaVacinas.cellForRow(at: indexPath)
         
-        performSegue(withIdentifier: "detalheVacina", sender: cell)
         
-        
+        if navegacaoSegmentInfo.selectedSegmentIndex == 0 {
+            performSegue(withIdentifier: "detalheVacina", sender: nil)
+       
+        }else{
+            
+            performSegue(withIdentifier: "detalhePergunta", sender: nil)
+        }
         
     }
     
@@ -111,28 +122,28 @@ class InfoController: UIViewController,UITableViewDataSource, UITableViewDelegat
     @IBAction func atualizarTable(_ sender: UISegmentedControl) {
         listaVacinas.reloadData()
     }
-    
-    
-    
-    
+
     
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "detalheVacina" {
             if let posicao = listaVacinas.indexPathForSelectedRow {
-                let controller = segue.destination as! DetalheVacina
                 
-                if navegacaoSegmentInfo.selectedSegmentIndex == 0 {
-                    let vacina = vacinas[posicao.section][posicao.row]
-                    controller.nome = vacina.vacina
-                    controller.descricao = vacina.descricao
-                } else {
-                    let pergunta = perguntas[posicao.row]
-                    controller.nome = pergunta.pergunta
-                    controller.descricao = pergunta.resposta
+                if let destinationController = segue.destination as? UINavigationController{
+                    
+                    if let destination = destinationController.topViewController as? DetalheVacina {
+                        let vacina = vacinas[posicao.section][posicao.row]
+                        destination.nome = vacina.vacina
+                        destination.descricao = vacina.descricao
+                    
+                    }else if let destination = destinationController.topViewController as? DetalhePergunta {
+                        let pergunta = perguntas[posicao.row]
+//                        destination.nome = pergunta.pergunta
+//                        destination.descricao = pergunta.resposta
+                    
+                    }
                 }
-                
                 
             }
         }
