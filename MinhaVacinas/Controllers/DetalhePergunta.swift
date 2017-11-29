@@ -19,11 +19,16 @@ class DetalhePergunta: UIViewController {
     
     @IBOutlet weak var resposta: UITextView!
     
+    var titulo = ""
+    var respostaT = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        tiulo.text = titulo
+        resposta.text = respostaT
     }
 
     override func didReceiveMemoryWarning() {

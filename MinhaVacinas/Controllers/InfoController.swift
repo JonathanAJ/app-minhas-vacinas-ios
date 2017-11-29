@@ -139,8 +139,8 @@ class InfoController: UIViewController,UITableViewDataSource, UITableViewDelegat
                     
                     }else if let destination = destinationController.topViewController as? DetalhePergunta {
                         let pergunta = perguntas[posicao.row]
-                        destination.tiulo.text = pergunta.pergunta
-                        destination.resposta.text = pergunta.resposta
+                        destination.titulo = pergunta.pergunta
+                        destination.respostaT = pergunta.resposta
                     
                     }
                 }
