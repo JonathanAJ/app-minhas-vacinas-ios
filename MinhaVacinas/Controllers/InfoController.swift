@@ -106,8 +106,6 @@ class InfoController: UIViewController,UITableViewDataSource, UITableViewDelegat
     
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let cell = listaVacinas.cellForRow(at: indexPath)
-        
         
         if navegacaoSegmentInfo.selectedSegmentIndex == 0 {
             performSegue(withIdentifier: "detalheVacina", sender: nil)
@@ -136,12 +134,14 @@ class InfoController: UIViewController,UITableViewDataSource, UITableViewDelegat
                     if let destination = destinationController.topViewController as? DetalheVacina {
                         let vacina = vacinas[posicao.section][posicao.row]
                         destination.nome = vacina.vacina
-                        destination.descricao = vacina.descricao
+                        destination.doencas = vacina.doenca
+                        destination.dosagem = vacina.dose
+                        destination.idadeRecomendada = vacina.idade
                     
                     }else if let destination = destinationController.topViewController as? DetalhePergunta {
                         let pergunta = perguntas[posicao.row]
-//                        destination.nome = pergunta.pergunta
-//                        destination.descricao = pergunta.resposta
+                        destination.titulo = pergunta.pergunta
+                        destination.respostaT = pergunta.resposta
                     
                     }
                 }

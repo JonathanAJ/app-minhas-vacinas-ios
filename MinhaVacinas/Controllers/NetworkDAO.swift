@@ -41,8 +41,6 @@ struct VacinasDAO {
                             v.doseQtd = vacinaValue["dose_qtd"] as? String ?? ""
                             v.dose = vacinaValue["dose"] as? String ?? ""
                             
-                            v.descricao = "Protege contra a doença(s):\n\(v.doenca)\n\nIdade recomendada:\n\(v.idade)\n\nDose:\n\(v.dose)\n\nDose Quantidade:\n\(v.doseQtd)"
-                            
                             if categoria.key as! String == "0_bebes" {
                                 bebe.append(v)
                             }
