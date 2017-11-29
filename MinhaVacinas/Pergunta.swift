@@ -11,4 +11,5 @@ import UIKit
 struct Pergunta {
     var pergunta: String = ""
     var resposta: String = ""
+    var fonte: String = ""
 }
