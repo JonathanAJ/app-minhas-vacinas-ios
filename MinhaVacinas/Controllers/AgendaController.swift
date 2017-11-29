@@ -11,8 +11,8 @@ import UIKit
 class AgendaController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
 
     @IBOutlet weak var circleProgress: CircleProgressView!
-    @IBOutlet weak var textProgress: UITextView!
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var textProgress: UILabel!
     
     var dataPerfis : [Perfil] = []
     var selectPerfil : Perfil? = nil

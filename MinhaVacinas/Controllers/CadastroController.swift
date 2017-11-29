@@ -18,7 +18,6 @@ class CadastroController: UIViewController, UIImagePickerControllerDelegate, UIN
     @IBOutlet weak var myName: UITextField!
     @IBOutlet weak var mySex: UISegmentedControl!
     @IBOutlet weak var myBorn: UIDatePicker!
-    @IBOutlet weak var myNavigation: UINavigationBar!
     
     var myPerfil : Perfil? = nil
     var isCreate : Bool = true
@@ -71,7 +70,7 @@ class CadastroController: UIViewController, UIImagePickerControllerDelegate, UIN
         
         if let perfil = myPerfil {
             self.isCreate = false
-            self.myNavigation.topItem?.title = "Atualizar Perfil"
+            self.title = "Atualizar Perfil"
             self.btCadastrar.title = "Atualizar"
             self.myName.text = perfil.name
             if (perfil.sex.elementsEqual("F")) {
@@ -79,10 +78,10 @@ class CadastroController: UIViewController, UIImagePickerControllerDelegate, UIN
             }
             self.myBorn.date = Date(timeIntervalSince1970: Double(perfil.born)!)
             self.myButtonImage.setImage(myPerfil?.image, for: UIControlState())
-        }else{
-            self.myButtonImage.layer.borderWidth = 1.0
         }
         
+        self.myButtonImage.layer.borderWidth = 5.0
+        self.myButtonImage.layer.borderColor = UIColor.white.cgColor
         self.myButtonImage.layer.masksToBounds = true
         self.myButtonImage.layer.cornerRadius = myButtonImage.frame.height * 0.5
     }

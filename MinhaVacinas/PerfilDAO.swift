@@ -35,6 +35,23 @@ class PerfilDAO{
         self.ref.child(perfil.id).updateChildValues(perfilUpdate)
     }
     
+    static func listPerfilBy(id : String, onComplete : @escaping ((_ perfil : Perfil?) -> Void)) {
+        self.ref.child(id).observe(.value, with: { snapshot in
+            if let value = snapshot.value as? NSDictionary {
+                var perfil : Perfil = Perfil()
+                perfil.id = snapshot.key
+                perfil.name = value["name"] as? String ?? ""
+                perfil.born = value["born"] as? String ?? ""
+                perfil.sex = value["sex"] as? String ?? ""
+                perfil.imageBase64 = value["imageBase64"] as? String ?? ""
+                onComplete(perfil)
+            }
+        }) { (error) in
+            onComplete(nil)
+            print(error.localizedDescription)
+        }
+    }
+    
     // lista todos os perfis, criando um onComplete para finalizar o request
     static func listAll(onComplete : @escaping ((_ perfis : [Perfil]?) -> Void) ){
         
