@@ -15,13 +15,41 @@ class PerfilDAO{
     
     static func create(perfil : Perfil){
         
-        let perfil : [NSString : Any] = [
+        let perfilCreate : [NSString : Any] = [
             "name" : perfil.name,
             "born" : perfil.born,
-            "sex" : perfil.sex
+            "sex" : perfil.sex,
+            "imageBase64" : perfil.imageBase64
         ]
         
-        self.ref.childByAutoId().setValue(perfil)
+        self.ref.childByAutoId().setValue(perfilCreate)
+    }
+    
+    static func update(perfil : Perfil){
+        let perfilUpdate : [NSString : Any] = [
+            "name" : perfil.name,
+            "born" : perfil.born,
+            "sex" : perfil.sex,
+            "imageBase64" : perfil.imageBase64
+        ]
+        self.ref.child(perfil.id).updateChildValues(perfilUpdate)
+    }
+    
+    static func listPerfilBy(id : String, onComplete : @escaping ((_ perfil : Perfil?) -> Void)) {
+        self.ref.child(id).observe(.value, with: { snapshot in
+            if let value = snapshot.value as? NSDictionary {
+                var perfil : Perfil = Perfil()
+                perfil.id = snapshot.key
+                perfil.name = value["name"] as? String ?? ""
+                perfil.born = value["born"] as? String ?? ""
+                perfil.sex = value["sex"] as? String ?? ""
+                perfil.imageBase64 = value["imageBase64"] as? String ?? ""
+                onComplete(perfil)
+            }
+        }) { (error) in
+            onComplete(nil)
+            print(error.localizedDescription)
+        }
     }
     
     // lista todos os perfis, criando um onComplete para finalizar o request
@@ -29,19 +57,22 @@ class PerfilDAO{
         
         self.ref.observe(.value, with: { (snapshot) in
             var arrayPerfil : [Perfil] = []
-            let value = snapshot.value as? NSDictionary
-            for child in value! {
-                if let perfilValue = child.value as? NSDictionary {
-                    var perfil : Perfil = Perfil()
-                    perfil.id = child.key as! String
-                    perfil.name = perfilValue["name"] as? String ?? ""
-                    perfil.born = perfilValue["born"] as? String ?? ""
-                    perfil.sex = perfilValue["sex"] as? String ?? ""
-                    arrayPerfil.append(perfil)
+            if let value = snapshot.value as? NSDictionary{
+                for child in value {
+                    if let perfilValue = child.value as? NSDictionary {
+                        var perfil : Perfil = Perfil()
+                        perfil.id = child.key as! String
+                        perfil.name = perfilValue["name"] as? String ?? ""
+                        perfil.born = perfilValue["born"] as? String ?? ""
+                        perfil.sex = perfilValue["sex"] as? String ?? ""
+                        perfil.imageBase64 = perfilValue["imageBase64"] as? String ?? ""
+                        arrayPerfil.append(perfil)
+                    }
                 }
+                onComplete(arrayPerfil)
+            }else{
+                onComplete(nil)
             }
-            onComplete(arrayPerfil)
-        
         }) { (error) in
             onComplete(nil)
             print(error.localizedDescription)
