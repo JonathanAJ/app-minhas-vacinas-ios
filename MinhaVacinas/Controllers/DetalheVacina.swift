@@ -13,13 +13,19 @@ class DetalheVacina: UIViewController {
     
     @IBOutlet weak var nomeVacina: UILabel!
     
-    @IBOutlet weak var detalheVacina: UITextView!
+    @IBOutlet weak var doencasImu: UILabel!
+    
+    @IBOutlet weak var idRecomendada: UILabel!
+    
+    @IBOutlet weak var dosagemVa: UILabel!
     
     
     
     
     var nome = ""
-    var descricao = ""
+    var doencas = ""
+    var idadeRecomendada = ""
+    var dosagem = ""
 
     @IBAction func close(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
@@ -29,7 +35,9 @@ class DetalheVacina: UIViewController {
         super.viewDidLoad()
         
         nomeVacina.text = nome
-        detalheVacina.text = descricao
+        doencasImu.text = doencas
+        idRecomendada.text = idadeRecomendada
+        dosagemVa.text = dosagem
 
         // Do any additional setup after loading the view.
     }

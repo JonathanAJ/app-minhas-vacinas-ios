@@ -14,6 +14,12 @@ class DetalhePergunta: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
     
+    
+    @IBOutlet weak var tiulo: UILabel!
+    
+    @IBOutlet weak var resposta: UITextView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
