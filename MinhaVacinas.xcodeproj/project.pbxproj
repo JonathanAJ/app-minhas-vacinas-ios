@@ -16,7 +16,7 @@
 		28ED6DB31FBB60A2009F880A /* MinhaVacinasUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28ED6DB21FBB60A2009F880A /* MinhaVacinasUITests.swift */; };
 		28ED6DDA1FBE090F009F880A /* InfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28ED6DD91FBE090F009F880A /* InfoController.swift */; };
 		28ED6DE21FC34AEB009F880A /* Vacinas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28ED6DE11FC34AEB009F880A /* Vacinas.swift */; };
-		28ED6DE71FC34BCE009F880A /* NetworkDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28ED6DE61FC34BCE009F880A /* NetworkDAO.swift */; };
+		28ED6DE71FC34BCE009F880A /* VacinasDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28ED6DE61FC34BCE009F880A /* VacinasDAO.swift */; };
 		28ED6DE91FC4A58F009F880A /* DetalheVacina.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28ED6DE81FC4A58F009F880A /* DetalheVacina.swift */; };
 		28ED6DEB1FC624C5009F880A /* Pergunta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28ED6DEA1FC624C5009F880A /* Pergunta.swift */; };
 		28ED6DED1FC625AD009F880A /* PerguntaDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28ED6DEC1FC625AD009F880A /* PerguntaDAO.swift */; };
@@ -75,7 +75,7 @@
 		28ED6DB41FBB60A2009F880A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		28ED6DD91FBE090F009F880A /* InfoController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoController.swift; sourceTree = "<group>"; };
 		28ED6DE11FC34AEB009F880A /* Vacinas.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vacinas.swift; sourceTree = "<group>"; };
-		28ED6DE61FC34BCE009F880A /* NetworkDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NetworkDAO.swift; path = Controllers/NetworkDAO.swift; sourceTree = "<group>"; };
+		28ED6DE61FC34BCE009F880A /* VacinasDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VacinasDAO.swift; path = Controllers/VacinasDAO.swift; sourceTree = "<group>"; };
 		28ED6DE81FC4A58F009F880A /* DetalheVacina.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetalheVacina.swift; sourceTree = "<group>"; };
 		28ED6DEA1FC624C5009F880A /* Pergunta.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pergunta.swift; sourceTree = "<group>"; };
 		28ED6DEC1FC625AD009F880A /* PerguntaDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PerguntaDAO.swift; sourceTree = "<group>"; };
@@ -225,7 +225,7 @@
 		28ED6DE31FC34AF3009F880A /* DAO */ = {
 			isa = PBXGroup;
 			children = (
-				28ED6DE61FC34BCE009F880A /* NetworkDAO.swift */,
+				28ED6DE61FC34BCE009F880A /* VacinasDAO.swift */,
 				3E1070A31FCC8FF90077E040 /* PerfilDAO.swift */,
 				28ED6DEC1FC625AD009F880A /* PerguntaDAO.swift */,
 			);
@@ -586,7 +586,7 @@
 				28ED6DDA1FBE090F009F880A /* InfoController.swift in Sources */,
 				28B21C2C1FCF2D1D00ED4AB2 /* DetalhePergunta.swift in Sources */,
 				28ED6DED1FC625AD009F880A /* PerguntaDAO.swift in Sources */,
-				28ED6DE71FC34BCE009F880A /* NetworkDAO.swift in Sources */,
+				28ED6DE71FC34BCE009F880A /* VacinasDAO.swift in Sources */,
 				3E1070A61FCDFB5F0077E040 /* PerfilController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
