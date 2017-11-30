@@ -138,17 +138,28 @@ class InfoController: UIViewController,UITableViewDataSource, UITableViewDelegat
                         destination.dosagem = vacina.dose
                         destination.idadeRecomendada = vacina.idade
                     
-                    }else if let destination = destinationController.topViewController as? DetalhePergunta {
+                    }
+                }
+                
+            }
+            
+        }
+        else {
+            if let posicao = listaVacinas.indexPathForSelectedRow {
+                
+                if let destinationController = segue.destination as? UINavigationController{
+                    
+                    if let destination = destinationController.topViewController as? DetalhePergunta {
                         let pergunta = perguntas[posicao.row]
                         destination.titulo = pergunta.pergunta
                         destination.respostaT = pergunta.resposta
-                    
+                        
                     }
                 }
                 
             }
         }
-    }
     
 
+    }
 }
