@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		283C591E1FD06AE400108CAA /* LocaisViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283C591D1FD06AE400108CAA /* LocaisViewController.swift */; };
+		283C59201FD0936800108CAA /* PostoSaude.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283C591F1FD0936800108CAA /* PostoSaude.swift */; };
+		283C59221FD0942500108CAA /* PostoDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283C59211FD0942500108CAA /* PostoDAO.swift */; };
 		28B21C2A1FCDCBE700ED4AB2 /* Pods_MinhaVacinas.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28B21C291FCDCBE700ED4AB2 /* Pods_MinhaVacinas.framework */; };
 		28B21C2C1FCF2D1D00ED4AB2 /* DetalhePergunta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B21C2B1FCF2D1D00ED4AB2 /* DetalhePergunta.swift */; };
 		28ED6D931FBB60A1009F880A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28ED6D921FBB60A1009F880A /* AppDelegate.swift */; };
@@ -60,6 +62,8 @@
 		0C37B18FD048C67D79BA0854 /* Pods-MinhaVacinas.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MinhaVacinas.release.xcconfig"; path = "Pods/Target Support Files/Pods-MinhaVacinas/Pods-MinhaVacinas.release.xcconfig"; sourceTree = "<group>"; };
 		18671F96E794B07C3F48885F /* Pods-MinhaVacinas.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MinhaVacinas.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MinhaVacinas/Pods-MinhaVacinas.debug.xcconfig"; sourceTree = "<group>"; };
 		283C591D1FD06AE400108CAA /* LocaisViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocaisViewController.swift; sourceTree = "<group>"; };
+		283C591F1FD0936800108CAA /* PostoSaude.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostoSaude.swift; sourceTree = "<group>"; };
+		283C59211FD0942500108CAA /* PostoDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostoDAO.swift; sourceTree = "<group>"; };
 		28B21C251FCDCB9100ED4AB2 /* Pods_MinhaVacinas.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_MinhaVacinas.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		28B21C291FCDCBE700ED4AB2 /* Pods_MinhaVacinas.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods_MinhaVacinas.framework; path = "../../Library/Developer/Xcode/DerivedData/MinhaVacinas-cyluzqfseydtvdgptefhcztyybgn/Build/Products/Debug-iphonesimulator/Pods_MinhaVacinas.framework"; sourceTree = "<group>"; };
 		28B21C2B1FCF2D1D00ED4AB2 /* DetalhePergunta.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetalhePergunta.swift; sourceTree = "<group>"; };
@@ -218,6 +222,7 @@
 				28ED6DE11FC34AEB009F880A /* Vacinas.swift */,
 				3E7FA9D91FC4A59F002DD752 /* Perfil.swift */,
 				28ED6DEA1FC624C5009F880A /* Pergunta.swift */,
+				283C591F1FD0936800108CAA /* PostoSaude.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -228,6 +233,7 @@
 				28ED6DE61FC34BCE009F880A /* VacinasDAO.swift */,
 				3E1070A31FCC8FF90077E040 /* PerfilDAO.swift */,
 				28ED6DEC1FC625AD009F880A /* PerguntaDAO.swift */,
+				283C59211FD0942500108CAA /* PostoDAO.swift */,
 			);
 			name = DAO;
 			sourceTree = "<group>";
@@ -585,6 +591,8 @@
 				28ED6DE91FC4A58F009F880A /* DetalheVacina.swift in Sources */,
 				28ED6DDA1FBE090F009F880A /* InfoController.swift in Sources */,
 				28B21C2C1FCF2D1D00ED4AB2 /* DetalhePergunta.swift in Sources */,
+				283C59221FD0942500108CAA /* PostoDAO.swift in Sources */,
+				283C59201FD0936800108CAA /* PostoSaude.swift in Sources */,
 				28ED6DED1FC625AD009F880A /* PerguntaDAO.swift in Sources */,
 				28ED6DE71FC34BCE009F880A /* VacinasDAO.swift in Sources */,
 				3E1070A61FCDFB5F0077E040 /* PerfilController.swift in Sources */,
