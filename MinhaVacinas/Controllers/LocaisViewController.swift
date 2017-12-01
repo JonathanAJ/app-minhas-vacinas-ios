@@ -33,6 +33,10 @@ class LocaisViewController: UIViewController, CLLocationManagerDelegate {
             locationManager.startUpdatingLocation()
             print("Começou a procurar a localizacao")
         }
+        
+        PostoDAO.listAll(onComplete: { posto in
+            
+        })
     }
 
     override func didReceiveMemoryWarning() {
