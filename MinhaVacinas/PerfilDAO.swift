@@ -13,13 +13,31 @@ class PerfilDAO{
     static let ref : DatabaseReference =
         Database.database().reference().child("perfil")
     
+    static func getMyVaccines(born : String) -> String {
+        let date = Date(timeIntervalSince1970: Double(born)!)
+        let dateYear = Calendar.current.dateComponents([.year], from: date, to: Date()).year!
+        
+        if dateYear <= 2 {
+            return "bebes"
+        }else if dateYear > 2 && dateYear <= 10 {
+            return "criancas"
+        }else if dateYear > 10 && dateYear <= 19 {
+            return "adolescentes"
+        }else if dateYear > 19 && dateYear <= 59 {
+            return "adultos"
+        }else {
+            return "idosos"
+        }
+    }
+    
     static func create(perfil : Perfil){
         
         let perfilCreate : [NSString : Any] = [
             "name" : perfil.name,
             "born" : perfil.born,
             "sex" : perfil.sex,
-            "imageBase64" : perfil.imageBase64
+            "imageBase64" : perfil.imageBase64,
+            "myVaccines" : getMyVaccines(born: perfil.born)
         ]
         
         self.ref.childByAutoId().setValue(perfilCreate)
@@ -43,6 +61,7 @@ class PerfilDAO{
                 perfil.name = value["name"] as? String ?? ""
                 perfil.born = value["born"] as? String ?? ""
                 perfil.sex = value["sex"] as? String ?? ""
+                perfil.myVaccines = value["myVaccines"] as? String ?? ""
                 perfil.imageBase64 = value["imageBase64"] as? String ?? ""
                 onComplete(perfil)
             }
@@ -65,6 +84,7 @@ class PerfilDAO{
                         perfil.name = perfilValue["name"] as? String ?? ""
                         perfil.born = perfilValue["born"] as? String ?? ""
                         perfil.sex = perfilValue["sex"] as? String ?? ""
+                        perfil.myVaccines = perfilValue["myVaccines"] as? String ?? ""
                         perfil.imageBase64 = perfilValue["imageBase64"] as? String ?? ""
                         arrayPerfil.append(perfil)
                     }

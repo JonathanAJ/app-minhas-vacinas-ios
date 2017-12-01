@@ -11,8 +11,7 @@ class PerfilController: UIViewController, UITableViewDelegate, UITableViewDataSo
     
     var myPerfil : Perfil? = nil
 
-    var vacinas = [[Vacina]]()
-    var sessoes: [String] = []
+    var vacinas = [Vacina]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,9 +22,8 @@ class PerfilController: UIViewController, UITableViewDelegate, UITableViewDataSo
         self.myTableVacinas.delegate = self
         self.myTableVacinas.dataSource = self
         
-        VacinasDAO.listAll(onComplete: { vacinas in
-            self.vacinas = vacinas
-            self.sessoes = VacinasDAO.categorais
+        VacinasDAO.listBy(category: myPerfil!.myVaccines, onComplete: { vacinas in
+            self.vacinas = vacinas!
             self.myTableVacinas.reloadData()
         })
     }
@@ -51,32 +49,31 @@ class PerfilController: UIViewController, UITableViewDelegate, UITableViewDataSo
         if let destinationController = segue.destination as? UINavigationController {
             if let destination = destinationController.topViewController as? CadastroController {
                 destination.myPerfil = self.myPerfil
-                print("entrou")
             }
         }
     }
-    // Configuracoes da table view
+    
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-            return sessoes[section].uppercased()
+            return "Minhas Vacinas"
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-            return sessoes.count
+            return 1
     }
     
-    // Numero de linhas em cada sessao
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-            return vacinas[section].count
+            return vacinas.count
     }
     
-    // Configurando as celulas da tableView
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Vacina", for: indexPath)
         
-        let vacina = vacinas[indexPath.section][indexPath.row]
-            cell.textLabel?.text = vacina.vacina
-            
-            return cell
+        let vacina = vacinas[indexPath.row]
+        cell.textLabel?.text = vacina.vacina
+        cell.detailTextLabel?.text = vacina.dose
+        cell.selectionStyle = UITableViewCellSelectionStyle.none
+    
+        return cell
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -84,11 +81,31 @@ class PerfilController: UIViewController, UITableViewDelegate, UITableViewDataSo
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let cell = tableView.cellForRow(at: indexPath)
-        if cell?.accessoryType == UITableViewCellAccessoryType.checkmark {
-            cell?.accessoryType = UITableViewCellAccessoryType.none
+        if let cell = tableView.cellForRow(at: indexPath){
+            selectLabel(cell)
+        }
+    }
+    
+    func selectLabel(_ cell : UITableViewCell){
+        if cell.accessoryType == UITableViewCellAccessoryType.checkmark {
+            cell.accessoryType = UITableViewCellAccessoryType.none
+            self.strikeTo(label: cell.textLabel!, with: cell.textLabel!.text!, with: .styleNone)
+            self.strikeTo(label: cell.detailTextLabel!, with: cell.detailTextLabel!.text!, with: .styleNone)
         }else{
-            cell?.accessoryType = UITableViewCellAccessoryType.checkmark
+            cell.accessoryType = UITableViewCellAccessoryType.checkmark
+            self.strikeTo(label: cell.textLabel!, with: cell.textLabel!.text!, with: .styleSingle)
+            self.strikeTo(label: cell.detailTextLabel!, with: cell.detailTextLabel!.text!, with: .styleSingle)
+        }
+    }
+    
+    func strikeTo(label : UILabel, with text : String, with style : NSUnderlineStyle){
+        let attrString = NSAttributedString(string: text, attributes: [NSAttributedStringKey.strikethroughStyle: style.rawValue])
+        label.attributedText = attrString
+        
+        if style == .styleSingle {
+            label.textColor = UIColor.lightGray
+        } else {
+            label.textColor = UIColor.black
         }
     }
 
