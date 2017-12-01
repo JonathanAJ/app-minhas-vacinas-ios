@@ -12,8 +12,7 @@ struct VacinasDAO {
     
     static let ref : DatabaseReference! =
         Database.database().reference().child("vacinas")
-    static let categorais = ["Bebes", "Crianças", "Adolescentes", "Adultos", "Idosos"]
-    
+    static let categorais = ["Bebês", "Crianças", "Adolescentes", "Adultos", "Idosos"]
     
     static func listAll(onComplete : @escaping ((_ perguntas : [[Vacina]]) -> Void)){
         

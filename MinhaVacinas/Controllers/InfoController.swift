@@ -64,11 +64,10 @@ class InfoController: UIViewController,UITableViewDataSource, UITableViewDelegat
     // Configuracoes da table view
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         if navegacaoSegmentInfo.selectedSegmentIndex == 0 {
-            return sessoes[section]
+            return sessoes[section].uppercased()
         } else {
-            return sessoesPerguntas[section]
+            return sessoesPerguntas[section].uppercased()
         }
-        
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -104,6 +103,9 @@ class InfoController: UIViewController,UITableViewDataSource, UITableViewDelegat
         
     }
     
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return CGFloat(44)
+    }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
