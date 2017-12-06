@@ -16,7 +16,7 @@ struct Perfil {
     var born : String = ""
     var sex : String = ""
     var imageBase64 : String = ""
-    var myVaccines : String = ""
+    var myVaccines : NSDictionary = [:]
     var image : UIImage? {
         get {
             let dataImage : Data = Data(base64Encoded: imageBase64, options: .ignoreUnknownCharacters)!

@@ -10,10 +10,10 @@ import Foundation
 import Firebase
 
 class PerfilDAO{
-    static let ref : DatabaseReference =
+    private static let ref : DatabaseReference =
         Database.database().reference().child("perfil")
     
-    static func getMyVaccines(born : String) -> String {
+    private static func getMyVaccines(born : String) -> String {
         let date = Date(timeIntervalSince1970: Double(born)!)
         let dateYear = Calendar.current.dateComponents([.year], from: date, to: Date()).year!
         
@@ -37,7 +37,7 @@ class PerfilDAO{
             "born" : perfil.born,
             "sex" : perfil.sex,
             "imageBase64" : perfil.imageBase64,
-            "myVaccines" : getMyVaccines(born: perfil.born)
+            "myVaccines" : [getMyVaccines(born: perfil.born) : true]
         ]
         
         self.ref.childByAutoId().setValue(perfilCreate)
@@ -53,17 +53,41 @@ class PerfilDAO{
         self.ref.child(perfil.id).updateChildValues(perfilUpdate)
     }
     
+    static func addVaccine(id vaccineID : String, to perfil : Perfil){
+        for vaccine in perfil.myVaccines {
+            let category = vaccine.key as? String ?? ""
+            self.ref.child(perfil.id)
+                    .child("myVaccines")
+                    .child(category)
+                    .child(vaccineID)
+                    .setValue(true)
+        }
+    }
+    
+    static func removeVaccine(id vaccineID : String, to perfil : Perfil){
+        for vaccine in perfil.myVaccines as NSDictionary {
+            let category = vaccine.key as? String ?? ""
+            self.ref.child(perfil.id)
+                .child("myVaccines")
+                .child(category)
+                .child(vaccineID)
+                .removeValue()
+            
+            if let numberOfVaccines = vaccine.value as? NSDictionary {
+                if numberOfVaccines.allKeys.count <= 1 {
+                    self.ref.child(perfil.id)
+                        .child("myVaccines")
+                        .updateChildValues([category : true])
+                }
+            }
+        }
+    }
+    
     static func listPerfilBy(id : String, onComplete : @escaping ((_ perfil : Perfil?) -> Void)) {
         self.ref.child(id).observe(.value, with: { snapshot in
-            if let value = snapshot.value as? NSDictionary {
-                var perfil : Perfil = Perfil()
-                perfil.id = snapshot.key
-                perfil.name = value["name"] as? String ?? ""
-                perfil.born = value["born"] as? String ?? ""
-                perfil.sex = value["sex"] as? String ?? ""
-                perfil.myVaccines = value["myVaccines"] as? String ?? ""
-                perfil.imageBase64 = value["imageBase64"] as? String ?? ""
-                onComplete(perfil)
+            if let perfilValue = snapshot.value as? NSDictionary {
+                let id = snapshot.key
+                onComplete(addPerfil(id : id, perfilValue))
             }
         }) { (error) in
             onComplete(nil)
@@ -79,14 +103,8 @@ class PerfilDAO{
             if let value = snapshot.value as? NSDictionary{
                 for child in value {
                     if let perfilValue = child.value as? NSDictionary {
-                        var perfil : Perfil = Perfil()
-                        perfil.id = child.key as! String
-                        perfil.name = perfilValue["name"] as? String ?? ""
-                        perfil.born = perfilValue["born"] as? String ?? ""
-                        perfil.sex = perfilValue["sex"] as? String ?? ""
-                        perfil.myVaccines = perfilValue["myVaccines"] as? String ?? ""
-                        perfil.imageBase64 = perfilValue["imageBase64"] as? String ?? ""
-                        arrayPerfil.append(perfil)
+                        let id = child.key as! String
+                        arrayPerfil.append(addPerfil(id : id, perfilValue))
                     }
                 }
                 onComplete(arrayPerfil)
@@ -97,5 +115,17 @@ class PerfilDAO{
             onComplete(nil)
             print(error.localizedDescription)
         }
+    }
+    
+    private static func addPerfil(id : String, _ perfilValue : NSDictionary) -> Perfil{
+        var perfil : Perfil = Perfil()
+        perfil.id = id
+        perfil.name = perfilValue["name"] as? String ?? ""
+        perfil.born = perfilValue["born"] as? String ?? ""
+        perfil.sex = perfilValue["sex"] as? String ?? ""
+        perfil.imageBase64 = perfilValue["imageBase64"] as? String ?? ""
+        perfil.myVaccines = perfilValue["myVaccines"] as? NSDictionary ?? [:]
+        
+        return perfil
     }
 }
