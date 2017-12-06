@@ -352,6 +352,7 @@
 				TargetAttributes = {
 					28ED6D8E1FBB60A1009F880A = {
 						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = PHQK5ESLGG;
 						ProvisioningStyle = Automatic;
 					};
 					28ED6DA21FBB60A2009F880A = {
@@ -773,6 +774,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = PHQK5ESLGG;
 				INFOPLIST_FILE = MinhaVacinas/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bepid.minhavacinas;
@@ -787,6 +789,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = PHQK5ESLGG;
 				INFOPLIST_FILE = MinhaVacinas/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bepid.minhavacinas;

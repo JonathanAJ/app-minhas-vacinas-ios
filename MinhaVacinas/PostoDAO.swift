@@ -14,23 +14,27 @@ struct PostoDAO {
     static let ref : DatabaseReference! =
         Database.database().reference().child("postos")
     
-    static func listAll(onComplete : @escaping ((_ pergunta : [Pergunta]) -> Void)){
-        self.ref.queryLimited(toFirst: 100).queryOrdered(byChild: "uf").queryEqual(toValue: "RJ", childKey: "uf").observeSingleEvent(of: .value, with: { (snapshot) in
-//        self.ref.observeSingleEvent(of: .value, with: { (snapshot) in
-            var perguntas = [Pergunta]()
-            let value = snapshot.value as? NSArray
+    static func listAll(onComplete : @escaping ((_ pergunta : [PostoSaude]) -> Void)){
+        
+        self.ref.observeSingleEvent(of: .value, with: { (snapshot) in
+            var postos = [PostoSaude]()
+            let value = snapshot.value as? NSDictionary
             
+            let todosPostos = value!["CE"] as? NSDictionary
             
-//            for pergunta in value! {
-//                if let perguntaValue = pergunta as? NSDictionary {
-//                    var p : Pergunta = Pergunta()
-//                    p.fonte = perguntaValue["fonte"] as? String ?? ""
-//                    p.pergunta = perguntaValue["pergunta"] as? String ?? ""
-//                    p.resposta = perguntaValue["resposta"] as? String ?? ""
-//                    perguntas.append(p)
-//                }
-//            }
-            onComplete(perguntas)
+            for posto in todosPostos! {
+                if let posto =  posto.value as? NSDictionary {
+                    var p : PostoSaude = PostoSaude()
+                    p.lat = posto["latitude"] as? String ?? ""
+                    p.lon = posto["longitude"] as? String ?? ""
+                    p.nome = posto["n_fantasia"] as? String ?? ""
+                    
+                    postos.append(p)
+                }
+                
+            
+            }
+//
             
         }) { (error) in
             print(error.localizedDescription)
