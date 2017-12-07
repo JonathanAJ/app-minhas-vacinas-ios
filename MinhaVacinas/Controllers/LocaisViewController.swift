@@ -16,7 +16,7 @@ class LocaisViewController: UIViewController, CLLocationManagerDelegate {
     
     // Usado para começar a pegar a localização do usuário
     let locationManager = CLLocationManager()
-    
+    var postos = [PostoSaude]()
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -31,12 +31,16 @@ class LocaisViewController: UIViewController, CLLocationManagerDelegate {
             locationManager.delegate = self
             locationManager.desiredAccuracy = kCLLocationAccuracyKilometer
             locationManager.startUpdatingLocation()
-            print("Começou a procurar a localizacao")
+            
         }
         
-        PostoDAO.listAll(onComplete: { posto in
-            
+        PostoDAO.listAll(onComplete: { postos in
+            self.postos = postos
+            for posto in postos {
+                self.mapa.addAnnotation(posto)
+            }
         })
+        
     }
 
     override func didReceiveMemoryWarning() {

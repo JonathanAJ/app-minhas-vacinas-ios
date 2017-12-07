@@ -7,10 +7,21 @@
 //
 
 import UIKit
-
-struct PostoSaude {
-    var lat: String = ""
-    var lon: String = ""
-    var nome: String = ""
+import MapKit
+class PostoSaude: NSObject, MKAnnotation {
+    var coordinate: CLLocationCoordinate2D
+    var title: String?
+    
+    init(nome: String,coordenada: CLLocationCoordinate2D) {
+        self.title = nome
+        self.coordinate = coordenada
+        
+        super.init()
+    }
+    
+    var subtitle: String? {
+        return title
+    }
+    
     
 }

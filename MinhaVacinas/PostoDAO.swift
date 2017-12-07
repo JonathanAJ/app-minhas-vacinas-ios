@@ -8,7 +8,7 @@
 
 import UIKit
 import Firebase
-
+import MapKit
 struct PostoDAO {
     
     static let ref : DatabaseReference! =
@@ -24,16 +24,17 @@ struct PostoDAO {
             
             for posto in todosPostos! {
                 if let posto =  posto.value as? NSDictionary {
-                    var p : PostoSaude = PostoSaude()
-                    p.lat = posto["latitude"] as? String ?? ""
-                    p.lon = posto["longitude"] as? String ?? ""
-                    p.nome = posto["n_fantasia"] as? String ?? ""
+                    var lat = posto["latitude"] as? String ?? ""
+                    var lon = posto["longitude"] as? String ?? ""
+                    var nome = posto["n_fantasia"] as? String ?? ""
+                    
+                    var p = PostoSaude(nome: nome, coordenada: CLLocationCoordinate2D(latitude: Double(lat)!, longitude: Double(lon)!))
                     
                     postos.append(p)
                 }
                 
-            
             }
+            onComplete(postos)
 //
             
         }) { (error) in
