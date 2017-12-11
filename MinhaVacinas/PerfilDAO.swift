@@ -64,6 +64,12 @@ class PerfilDAO{
         }
     }
     
+    static func set(progress : Double, to perfil : Perfil){
+        self.ref.child(perfil.id)
+            .child("progress")
+            .setValue(progress)
+    }
+    
     static func removeVaccine(id vaccineID : String, to perfil : Perfil){
         for vaccine in perfil.myVaccines as NSDictionary {
             let category = vaccine.key as? String ?? ""
@@ -124,6 +130,7 @@ class PerfilDAO{
         perfil.born = perfilValue["born"] as? String ?? ""
         perfil.sex = perfilValue["sex"] as? String ?? ""
         perfil.imageBase64 = perfilValue["imageBase64"] as? String ?? ""
+        perfil.progress = perfilValue["progress"] as? Double ?? 0
         perfil.myVaccines = perfilValue["myVaccines"] as? NSDictionary ?? [:]
         
         return perfil

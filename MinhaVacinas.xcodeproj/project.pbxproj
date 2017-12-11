@@ -26,6 +26,7 @@
 		3E1070A21FCC894F0077E040 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3E1070A11FCC894F0077E040 /* GoogleService-Info.plist */; };
 		3E1070A41FCC8FF90077E040 /* PerfilDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E1070A31FCC8FF90077E040 /* PerfilDAO.swift */; };
 		3E1070A61FCDFB5F0077E040 /* PerfilController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E1070A51FCDFB5F0077E040 /* PerfilController.swift */; };
+		3E4CBC4A1FDF1C75005BE2E5 /* EasyNotificationBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E4CBC491FDF1C75005BE2E5 /* EasyNotificationBadge.swift */; };
 		3E7FA9D81FC49FA7002DD752 /* MyCollectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E7FA9D71FC49FA7002DD752 /* MyCollectionController.swift */; };
 		3E7FA9DA1FC4A59F002DD752 /* Perfil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E7FA9D91FC4A59F002DD752 /* Perfil.swift */; };
 		3E838EA41FBB722A00D3AC78 /* Agenda.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E838EA21FBB722A00D3AC78 /* Agenda.storyboard */; };
@@ -87,6 +88,7 @@
 		3E1070A11FCC894F0077E040 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3E1070A31FCC8FF90077E040 /* PerfilDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerfilDAO.swift; sourceTree = "<group>"; };
 		3E1070A51FCDFB5F0077E040 /* PerfilController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerfilController.swift; sourceTree = "<group>"; };
+		3E4CBC491FDF1C75005BE2E5 /* EasyNotificationBadge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EasyNotificationBadge.swift; sourceTree = "<group>"; };
 		3E7FA9D71FC49FA7002DD752 /* MyCollectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCollectionController.swift; sourceTree = "<group>"; };
 		3E7FA9D91FC4A59F002DD752 /* Perfil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Perfil.swift; sourceTree = "<group>"; };
 		3E838EA31FBB722A00D3AC78 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = MinhaVacinas/Base.lproj/Agenda.storyboard; sourceTree = SOURCE_ROOT; };
@@ -241,6 +243,7 @@
 		3E10709E1FC5FEB00077E040 /* Libs */ = {
 			isa = PBXGroup;
 			children = (
+				3E4CBC491FDF1C75005BE2E5 /* EasyNotificationBadge.swift */,
 				3E10709F1FC5FEE60077E040 /* CircleProgressView.swift */,
 			);
 			path = Libs;
@@ -583,6 +586,7 @@
 				28ED6D931FBB60A1009F880A /* AppDelegate.swift in Sources */,
 				3E1070A41FCC8FF90077E040 /* PerfilDAO.swift in Sources */,
 				3E838EC61FBB75D600D3AC78 /* AgendaController.swift in Sources */,
+				3E4CBC4A1FDF1C75005BE2E5 /* EasyNotificationBadge.swift in Sources */,
 				283C591E1FD06AE400108CAA /* LocaisViewController.swift in Sources */,
 				28ED6DE21FC34AEB009F880A /* Vacinas.swift in Sources */,
 				3E7FA9DA1FC4A59F002DD752 /* Perfil.swift in Sources */,

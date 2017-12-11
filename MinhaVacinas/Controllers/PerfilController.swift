@@ -10,12 +10,13 @@ class PerfilController: UIViewController, UITableViewDelegate, UITableViewDataSo
     @IBOutlet weak var myTableVacinas: UITableView!
     
     var myPerfil : Perfil? = nil
+    var countComplete : Double = 0.0
 
     var listVacinas = [Vacina]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        circleProgress.setProgress(1, animated: true);
+        circleProgress.setProgress(0, animated: true);
         loadPerfil(perfil: myPerfil!)
         loadUserInformation()
         
@@ -25,6 +26,12 @@ class PerfilController: UIViewController, UITableViewDelegate, UITableViewDataSo
         VacinasDAO.listVaccinesBy(perfil: myPerfil!, onComplete: { vacinas in
             self.listVacinas = vacinas!
             self.myTableVacinas.reloadData()
+            
+            DispatchQueue.global(qos: .background).async {
+                for vacina in self.listVacinas where vacina.isChecked {
+                    self.upCount()
+                }
+            }
         })
     }
     
@@ -43,6 +50,7 @@ class PerfilController: UIViewController, UITableViewDelegate, UITableViewDataSo
         self.myName.text = perfil.name
         self.myAge.text = perfil.age
         self.myImage.image = perfil.image
+        self.setProgress(perfil.progress)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -109,6 +117,8 @@ class PerfilController: UIViewController, UITableViewDelegate, UITableViewDataSo
             PerfilDAO.removeVaccine(id: listVacinas[index].id, to: myPerfil!)
             listVacinas[index].isChecked = false
             
+            self.downCount()
+            
         }else{
             cell.accessoryType = UITableViewCellAccessoryType.checkmark
             self.strikeTo(label: cell.textLabel!, with: cell.textLabel!.text!, with: .styleSingle)
@@ -116,6 +126,8 @@ class PerfilController: UIViewController, UITableViewDelegate, UITableViewDataSo
             
             PerfilDAO.addVaccine(id: listVacinas[index].id, to: myPerfil!)
             listVacinas[index].isChecked = true
+        
+            self.upCount()
         }
     }
     
@@ -128,6 +140,33 @@ class PerfilController: UIViewController, UITableViewDelegate, UITableViewDataSo
         } else {
             label.textColor = UIColor.black
         }
+    }
+    
+    func calcProgress(){
+        let myProgress : Double = self.countComplete / Double(self.listVacinas.count)
+        self.setProgress(myProgress)
+        PerfilDAO.set(progress: myProgress, to: myPerfil!)
+    }
+    
+    func upCount(){
+        if self.countComplete <= Double(listVacinas.count) {
+            self.countComplete = self.countComplete + 1
+            self.calcProgress()
+        }
+    }
+    
+    func downCount(){
+        if self.countComplete >= 0 {
+            self.countComplete = self.countComplete - 1
+            self.calcProgress()
+        }
+    }
+    
+    func setProgress(_ progress : Double){
+        DispatchQueue.main.async {
+            self.textProgress.text = "\(String(format:"%.0f", progress * 100))%"
+        }
+        self.circleProgress.setProgress(progress, animated: true)
     }
 
     override func didReceiveMemoryWarning() {
