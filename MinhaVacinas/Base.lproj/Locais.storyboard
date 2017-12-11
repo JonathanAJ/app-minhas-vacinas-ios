@@ -29,7 +29,7 @@
             </objects>
             <point key="canvasLocation" x="-12" y="213"/>
         </scene>
-        <!--Locais View Controller-->
+        <!--App Vacinas-->
         <scene sceneID="wU9-Xm-44W">
             <objects>
                 <viewController id="VhT-Q7-wPZ" customClass="LocaisViewController" customModule="MinhaVacinas" customModuleProvider="target" sceneMemberID="viewController">
@@ -61,7 +61,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="vA2-aL-WtH"/>
                     </view>
-                    <navigationItem key="navigationItem" id="NPq-8g-8q0"/>
+                    <navigationItem key="navigationItem" title="App Vacinas" id="NPq-8g-8q0"/>
                     <connections>
                         <outlet property="mapa" destination="uH7-jd-fXS" id="LnL-5l-RXm"/>
                     </connections>

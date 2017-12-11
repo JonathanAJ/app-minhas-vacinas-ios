@@ -29,7 +29,7 @@
             </objects>
             <point key="canvasLocation" x="-361" y="121"/>
         </scene>
-        <!--View Controller-->
+        <!--App Vacinas-->
         <scene sceneID="7ii-X7-wyf">
             <objects>
                 <viewController id="jzX-y9-7hx" sceneMemberID="viewController">
@@ -74,7 +74,7 @@
                             <constraint firstItem="M73-RB-OmX" firstAttribute="leading" secondItem="RBN-XW-a3Q" secondAttribute="leadingMargin" constant="44" id="uvS-eZ-XS3"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="pGX-6E-X61"/>
+                    <navigationItem key="navigationItem" title="App Vacinas" id="pGX-6E-X61"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A7a-mQ-vB4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
