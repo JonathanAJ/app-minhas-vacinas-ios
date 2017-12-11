@@ -14,6 +14,7 @@ class LocaisViewController: UIViewController, CLLocationManagerDelegate {
     
     @IBOutlet weak var mapa: MKMapView!
     
+    
     // Usado para começar a pegar a localização do usuário
     let locationManager = CLLocationManager()
     var postos = [PostoSaude]()
@@ -24,13 +25,17 @@ class LocaisViewController: UIViewController, CLLocationManagerDelegate {
 //        let initialLocation = CLLocation(latitude: 21.282778, longitude: -157.829444)
 //        centerMapLocation(location: initialLocation)
         
-        locationManager.requestAlwaysAuthorization()
+        locationManager.requestWhenInUseAuthorization()
+        mapa.showsUserLocation = true
         
         // Se o servico de localizacao estiver habilitado, pegar a localizacao do usuário
         if CLLocationManager.locationServicesEnabled() {
             locationManager.delegate = self
             locationManager.desiredAccuracy = kCLLocationAccuracyKilometer
-            locationManager.startUpdatingLocation()
+            if let location = locationManager.location {
+                centerMapOnLocation(location: location)
+            }
+            
             
         }
         
@@ -63,6 +68,18 @@ class LocaisViewController: UIViewController, CLLocationManagerDelegate {
         let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate, regionRadius, regionRadius)
         mapa.setRegion(coordinateRegion, animated: true)
     }
+    
+    
+    @IBAction func centralizar(_ sender: UIButton) {
+        centerMapOnLocation(location: locationManager.location!)
+    }
+    
+    @IBAction func rota(_ sender: UIButton) {
+        
+    }
+    
+    
+    
     
     
     
