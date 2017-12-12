@@ -11,7 +11,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--App Vacinas-->
+        <!--Vaccine Check-->
         <scene sceneID="nHM-lK-HmK">
             <objects>
                 <viewController id="K9M-as-K2b" customClass="AgendaController" customModule="MinhaVacinas" customModuleProvider="target" sceneMemberID="viewController">
@@ -159,7 +159,7 @@
                             <constraint firstItem="8UB-3R-pwb" firstAttribute="leading" secondItem="TY3-3J-njv" secondAttribute="leadingMargin" id="rnO-rb-jHn"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="App Vacinas" id="4hP-2I-voV">
+                    <navigationItem key="navigationItem" title="Vaccine Check" id="4hP-2I-voV">
                         <barButtonItem key="backBarButtonItem" title="Agenda" id="UP3-BW-8MN"/>
                         <barButtonItem key="rightBarButtonItem" title="Adicionar" id="Mi8-gA-ySm">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

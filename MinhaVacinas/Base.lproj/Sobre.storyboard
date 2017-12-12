@@ -46,7 +46,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="App Vacinas" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dOv-8g-zw8">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vaccine Check" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dOv-8g-zw8">
                                 <rect key="frame" x="46" y="0.0" width="283" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="hQ3-IZ-RGs"/>
@@ -56,20 +56,20 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Versão" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M73-RB-OmX">
-                                <rect key="frame" x="46" y="108" width="283" height="17"/>
+                                <rect key="frame" x="46" y="108" width="44" height="17"/>
                                 <fontDescription key="fontDescription" type="system" weight="thin" pointSize="14"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qCg-fk-6sr">
-                                <rect key="frame" x="46" y="129" width="283" height="21"/>
+                                <rect key="frame" x="46" y="129" width="24" height="21"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="justified" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lHj-78-lsv">
                                 <rect key="frame" x="46" y="182" width="293" height="340"/>
-                                <string key="text">O App vacinas é uma Agenda na qual você pode manter o histórico da sua caderneta de vacinação e de seus familiares. Para começar a utlizar o app crie um perfil e adicione as vacinas que já foram tomadas. Em Informações você irá encontrar uma compilação das principais informações sobre o assunto. Em Locais são listadas as localizações dos postos de saúde mais pertos da sua localização. Se vacine!</string>
+                                <string key="text">O Vaccine Check é uma Agenda na qual você pode manter o histórico da sua caderneta de vacinação e de seus familiares. Para começar a utlizar o app crie um perfil e adicione as vacinas que já foram tomadas. Em Informações você irá encontrar uma compilação das principais informações sobre o assunto. Em Locais são listadas as localizações dos postos de saúde mais pertos da sua localização. Se vacine!</string>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -79,11 +79,11 @@
                         <constraints>
                             <constraint firstItem="JRr-ke-Pwo" firstAttribute="top" secondItem="lHj-78-lsv" secondAttribute="bottom" constant="32" id="2S4-yq-rU7"/>
                             <constraint firstItem="dOv-8g-zw8" firstAttribute="top" secondItem="yOe-zw-Woy" secondAttribute="bottom" id="8Mc-iA-HfU"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="M73-RB-OmX" secondAttribute="trailing" constant="30" id="EP9-MD-Rnj"/>
+                            <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="M73-RB-OmX" secondAttribute="trailing" id="EP9-MD-Rnj"/>
                             <constraint firstAttribute="trailingMargin" secondItem="dOv-8g-zw8" secondAttribute="trailing" constant="30" id="Eh7-aM-yGw"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="dOv-8g-zw8" secondAttribute="trailing" constant="30" id="Iay-7Z-OZc"/>
+                            <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="dOv-8g-zw8" secondAttribute="trailing" id="Iay-7Z-OZc"/>
                             <constraint firstItem="M73-RB-OmX" firstAttribute="leading" secondItem="RBN-XW-a3Q" secondAttribute="leadingMargin" constant="30" id="O2s-oU-aCq"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="qCg-fk-6sr" secondAttribute="trailing" constant="30" id="UJD-xX-7p4"/>
+                            <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="qCg-fk-6sr" secondAttribute="trailing" id="UJD-xX-7p4"/>
                             <constraint firstItem="dOv-8g-zw8" firstAttribute="leading" secondItem="RBN-XW-a3Q" secondAttribute="leadingMargin" constant="30" id="Vr1-Xw-l46"/>
                             <constraint firstItem="M73-RB-OmX" firstAttribute="top" secondItem="dOv-8g-zw8" secondAttribute="bottom" constant="8" id="VyT-iy-oBv"/>
                             <constraint firstItem="qCg-fk-6sr" firstAttribute="top" secondItem="M73-RB-OmX" secondAttribute="bottom" constant="4" id="XOU-Vp-y05"/>

@@ -35,10 +35,10 @@
             </objects>
             <point key="canvasLocation" x="-564" y="238"/>
         </scene>
-        <!--App Vacinas-->
+        <!--Vaccine Check-->
         <scene sceneID="LM2-ws-ATv">
             <objects>
-                <viewController title="App Vacinas" id="GJ5-vB-wSu" customClass="InfoController" customModule="MinhaVacinas" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Vaccine Check" id="GJ5-vB-wSu" customClass="InfoController" customModule="MinhaVacinas" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="97X-dr-pHX"/>
                         <viewControllerLayoutGuide type="bottom" id="kUY-QZ-jZ4"/>

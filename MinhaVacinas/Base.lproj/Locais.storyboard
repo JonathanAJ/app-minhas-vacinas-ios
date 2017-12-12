@@ -29,7 +29,7 @@
             </objects>
             <point key="canvasLocation" x="-12" y="213"/>
         </scene>
-        <!--App Vacinas-->
+        <!--Vaccine Check-->
         <scene sceneID="wU9-Xm-44W">
             <objects>
                 <viewController id="VhT-Q7-wPZ" customClass="LocaisViewController" customModule="MinhaVacinas" customModuleProvider="target" sceneMemberID="viewController">
@@ -40,11 +40,14 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" pitchEnabled="NO" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uH7-jd-fXS">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
                             </mapView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1fE-X4-59c">
-                                <rect key="frame" x="306" y="442" width="32" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1fE-X4-59c">
+                                <rect key="frame" x="305" y="484" width="54" height="54"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="54" id="41c-cD-cc1"/>
+                                    <constraint firstAttribute="height" constant="54" id="FAR-oy-6EA"/>
+                                </constraints>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <state key="normal" image="ios7-information-outline">
+                                <state key="normal" image="location">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
@@ -54,14 +57,16 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="vA2-aL-WtH" firstAttribute="trailing" secondItem="1fE-X4-59c" secondAttribute="trailing" constant="16" id="QSh-NS-XQr"/>
                             <constraint firstItem="uH7-jd-fXS" firstAttribute="top" secondItem="gYB-3s-hdf" secondAttribute="top" id="So4-3t-Ap0"/>
                             <constraint firstItem="uH7-jd-fXS" firstAttribute="trailing" secondItem="vA2-aL-WtH" secondAttribute="trailing" id="WRw-ov-H3U"/>
                             <constraint firstItem="uH7-jd-fXS" firstAttribute="leading" secondItem="vA2-aL-WtH" secondAttribute="leading" id="cP8-dE-P7f"/>
+                            <constraint firstItem="vA2-aL-WtH" firstAttribute="bottom" secondItem="1fE-X4-59c" secondAttribute="bottom" constant="16" id="eXr-Fl-XI9"/>
                             <constraint firstItem="uH7-jd-fXS" firstAttribute="bottom" secondItem="vA2-aL-WtH" secondAttribute="bottom" id="i5v-KF-Ena"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="vA2-aL-WtH"/>
                     </view>
-                    <navigationItem key="navigationItem" title="App Vacinas" id="NPq-8g-8q0"/>
+                    <navigationItem key="navigationItem" title="Vaccine Check" id="NPq-8g-8q0"/>
                     <connections>
                         <outlet property="mapa" destination="uH7-jd-fXS" id="LnL-5l-RXm"/>
                     </connections>
@@ -72,7 +77,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="ios7-information-outline" width="32" height="32"/>
         <image name="ios7-location-outline" width="32" height="32"/>
+        <image name="location" width="76" height="76"/>
     </resources>
 </document>
