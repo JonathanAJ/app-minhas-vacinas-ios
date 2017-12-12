@@ -82,6 +82,8 @@ class CadastroController: UIViewController, UIImagePickerControllerDelegate, UIN
         
         self.myButtonImage.layer.borderWidth = 5.0
         self.myButtonImage.layer.borderColor = UIColor.white.cgColor
+        
+            self.myButtonImage.imageView?.contentMode = .scaleAspectFill
         self.myButtonImage.layer.masksToBounds = true
         self.myButtonImage.layer.cornerRadius = myButtonImage.frame.height * 0.5
     }
