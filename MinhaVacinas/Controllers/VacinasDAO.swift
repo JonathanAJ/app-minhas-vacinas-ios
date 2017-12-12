@@ -12,7 +12,7 @@ struct VacinasDAO {
     
     static let ref : DatabaseReference! =
         Database.database().reference().child("vacinas")
-    static let categorais = ["Bebês", "Crianças", "Adolescentes", "Adultos", "Idosos"]
+    static let categories = ["Bebês", "Crianças", "Adolescentes", "Adultos", "Idosos"]
     
     static func listAll(onComplete : @escaping ((_ perguntas : [[Vacina]]) -> Void)){
         
@@ -31,12 +31,9 @@ struct VacinasDAO {
                     
                     for vacina in categoriaValue {
                         if let vacinaValue = vacina.value as? NSDictionary{
-                            var v = Vacina()
-                            v.doenca = vacinaValue["doenca_protecao"] as? String ?? ""
-                            v.idade = vacinaValue["idade"] as? String ?? ""
-                            v.vacina = vacinaValue["vacina"] as? String ?? ""
-                            v.doseQtd = vacinaValue["dose_qtd"] as? String ?? ""
-                            v.dose = vacinaValue["dose"] as? String ?? ""
+        
+                            let id = vacina.key as? String ?? ""
+                            let v = addVaccine(id: id, vacinaValue)
                             
                             if categoria.key as! String == "bebes" {
                                 bebe.append(v)
@@ -71,32 +68,57 @@ struct VacinasDAO {
         }
     }
     
-    static func listBy(category : String, onComplete : @escaping ((_ : [Vacina]?) -> Void)){
+    static func listVaccinesBy(perfil : Perfil, onComplete : @escaping ((_ : [Vacina]?) -> Void)){
         
-        var myVacine = [Vacina]()
-        
-        self.ref.child(category).observeSingleEvent(of: .value, with: { (snapshot) in
-            let value = snapshot.value as? NSDictionary
+        for vaccinePerfil in perfil.myVaccines {
             
-            for vacina in value! {
-                if let vacinaValue = vacina.value as? NSDictionary {
-                    var v = Vacina()
-                    
-                    v.doenca = vacinaValue["doenca_protecao"] as? String ?? ""
-                    v.idade = vacinaValue["idade"] as? String ?? ""
-                    v.vacina = vacinaValue["vacina"] as? String ?? ""
-                    v.doseQtd = vacinaValue["dose_qtd"] as? String ?? ""
-                    v.dose = vacinaValue["dose"] as? String ?? ""
-                    
-                    myVacine.append(v)
+            let category = vaccinePerfil.key as? String ?? ""
+            
+            self.ref.child(category).observeSingleEvent(of: .value, with: { (snapshot) in
+                if let value = snapshot.value as? NSDictionary {
+                    var vaccineList = [Vacina]()
+                    for vacina in value {
+                        if let vacinaValue = vacina.value as? NSDictionary {
+                            let id = vacina.key as? String ?? ""
+                            var v = addVaccine(id: id, vacinaValue)
+                            
+                            if let vaccinesCheck = vaccinePerfil.value as? NSDictionary{
+                                var listCheck = [String]()
+                                for vac in vaccinesCheck {
+                                    listCheck.append(vac.key as? String ?? "")
+                                }
+                                if listCheck.contains(id) {
+                                    v.isChecked = true
+                                }
+                            }
+                            
+                            vaccineList.append(v)
+                        }
+                    }
+                    onComplete(vaccineList)
+                }else{
+                    onComplete(nil)
                 }
+                
+            }) { (error) in
+                onComplete(nil)
+                print(error.localizedDescription)
             }
-            onComplete(myVacine)
-            
-        }) { (error) in
-            onComplete(nil)
-            print(error.localizedDescription)
         }
+    }
+    
+    
+    
+    private static func addVaccine(id : String, _ vacinaValue : NSDictionary) -> Vacina{
+        var vacina = Vacina()
+        vacina.id = id
+        vacina.doenca = vacinaValue["doenca_protecao"] as? String ?? ""
+        vacina.idade = vacinaValue["idade"] as? String ?? ""
+        vacina.vacina = vacinaValue["vacina"] as? String ?? ""
+        vacina.doseQtd = vacinaValue["dose_qtd"] as? String ?? ""
+        vacina.dose = vacinaValue["dose"] as? String ?? ""
+        
+        return vacina
     }
     
 }
