@@ -26,6 +26,7 @@
 		3E1070A21FCC894F0077E040 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3E1070A11FCC894F0077E040 /* GoogleService-Info.plist */; };
 		3E1070A41FCC8FF90077E040 /* PerfilDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E1070A31FCC8FF90077E040 /* PerfilDAO.swift */; };
 		3E1070A61FCDFB5F0077E040 /* PerfilController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E1070A51FCDFB5F0077E040 /* PerfilController.swift */; };
+		3E36C5651FE03BDD00202DB9 /* SplashScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E36C5641FE03BDD00202DB9 /* SplashScreen.storyboard */; };
 		3E4CBC4A1FDF1C75005BE2E5 /* EasyNotificationBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E4CBC491FDF1C75005BE2E5 /* EasyNotificationBadge.swift */; };
 		3E7FA9D81FC49FA7002DD752 /* MyCollectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E7FA9D71FC49FA7002DD752 /* MyCollectionController.swift */; };
 		3E7FA9DA1FC4A59F002DD752 /* Perfil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E7FA9D91FC4A59F002DD752 /* Perfil.swift */; };
@@ -37,7 +38,6 @@
 		3E838EC41FBB75B000D3AC78 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E838EC31FBB75B000D3AC78 /* ViewController.swift */; };
 		3E838EC61FBB75D600D3AC78 /* AgendaController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E838EC51FBB75D600D3AC78 /* AgendaController.swift */; };
 		3E838EC81FC34ECE00D3AC78 /* CadastroController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E838EC71FC34ECE00D3AC78 /* CadastroController.swift */; };
-		3EC0F1BB1FBB6BE0004F1CDE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EC0F1B81FBB6BE0004F1CDE /* LaunchScreen.storyboard */; };
 		6484955B341781BEF17871D7 /* Pods_MinhaVacinasUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF0724FD108888C999BD34F6 /* Pods_MinhaVacinasUITests.framework */; };
 		B188F3D57F13895684D9EB89 /* Pods_MinhaVacinasTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B2F3016D01BA0AB87AABA67 /* Pods_MinhaVacinasTests.framework */; };
 /* End PBXBuildFile section */
@@ -88,6 +88,7 @@
 		3E1070A11FCC894F0077E040 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3E1070A31FCC8FF90077E040 /* PerfilDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerfilDAO.swift; sourceTree = "<group>"; };
 		3E1070A51FCDFB5F0077E040 /* PerfilController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerfilController.swift; sourceTree = "<group>"; };
+		3E36C5641FE03BDD00202DB9 /* SplashScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SplashScreen.storyboard; sourceTree = "<group>"; };
 		3E4CBC491FDF1C75005BE2E5 /* EasyNotificationBadge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EasyNotificationBadge.swift; sourceTree = "<group>"; };
 		3E7FA9D71FC49FA7002DD752 /* MyCollectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCollectionController.swift; sourceTree = "<group>"; };
 		3E7FA9D91FC4A59F002DD752 /* Perfil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Perfil.swift; sourceTree = "<group>"; };
@@ -99,7 +100,6 @@
 		3E838EC31FBB75B000D3AC78 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = MinhaVacinas/ViewController.swift; sourceTree = SOURCE_ROOT; };
 		3E838EC51FBB75D600D3AC78 /* AgendaController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgendaController.swift; sourceTree = "<group>"; };
 		3E838EC71FC34ECE00D3AC78 /* CadastroController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CadastroController.swift; sourceTree = "<group>"; };
-		3EC0F1B91FBB6BE0004F1CDE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = MinhaVacinas/Base.lproj/LaunchScreen.storyboard; sourceTree = SOURCE_ROOT; };
 		592AFC91D829CC48A10BB8E6 /* Pods-MinhaVacinasTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MinhaVacinasTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MinhaVacinasTests/Pods-MinhaVacinasTests.release.xcconfig"; sourceTree = "<group>"; };
 		69716CB011DA1FC4A4C66886 /* Pods-MinhaVacinasUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MinhaVacinasUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MinhaVacinasUITests/Pods-MinhaVacinasUITests.release.xcconfig"; sourceTree = "<group>"; };
 		6B2F3016D01BA0AB87AABA67 /* Pods_MinhaVacinasTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MinhaVacinasTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -273,7 +273,7 @@
 				3E838EB01FBB731500D3AC78 /* Main.storyboard */,
 				3E838EAB1FBB72DB00D3AC78 /* Informacoes.storyboard */,
 				3E838EA21FBB722A00D3AC78 /* Agenda.storyboard */,
-				3EC0F1B81FBB6BE0004F1CDE /* LaunchScreen.storyboard */,
+				3E36C5641FE03BDD00202DB9 /* SplashScreen.storyboard */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -396,9 +396,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				3E838EA41FBB722A00D3AC78 /* Agenda.storyboard in Resources */,
+				3E36C5651FE03BDD00202DB9 /* SplashScreen.storyboard in Resources */,
 				3E1070A21FCC894F0077E040 /* GoogleService-Info.plist in Resources */,
 				3E838EC11FBB740900D3AC78 /* Sobre.storyboard in Resources */,
-				3EC0F1BB1FBB6BE0004F1CDE /* LaunchScreen.storyboard in Resources */,
 				3E838EAC1FBB72DB00D3AC78 /* Informacoes.storyboard in Resources */,
 				3E838EBB1FBB73E400D3AC78 /* Locais.storyboard in Resources */,
 				3E838EB21FBB731500D3AC78 /* Main.storyboard in Resources */,
@@ -666,14 +666,6 @@
 				3E838EC01FBB740900D3AC78 /* Base */,
 			);
 			name = Sobre.storyboard;
-			sourceTree = "<group>";
-		};
-		3EC0F1B81FBB6BE0004F1CDE /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				3EC0F1B91FBB6BE0004F1CDE /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
