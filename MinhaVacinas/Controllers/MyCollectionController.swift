@@ -39,8 +39,8 @@ class MyCollectionCellController: UICollectionViewCell {
         badgeAppearance.textColor = UIColor.white // default is white
         badgeAppearance.textAlignment = .center //default is center
         badgeAppearance.textSize = 10 //default is 12
-        badgeAppearance.distanceFromCenterX = 25 //default is 0
-        badgeAppearance.distanceFromCenterY = -35 //default is 0
+        badgeAppearance.distanceFromCenterX = 20 //default is 0
+        badgeAppearance.distanceFromCenterY = 2 //default is 0
         self.myView.badge(text: "\(String(format:"%.0f", progress * 100))%", appearance: badgeAppearance)
     }
 }
