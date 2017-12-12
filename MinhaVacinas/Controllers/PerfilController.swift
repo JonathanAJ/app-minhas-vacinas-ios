@@ -10,21 +10,28 @@ class PerfilController: UIViewController, UITableViewDelegate, UITableViewDataSo
     @IBOutlet weak var myTableVacinas: UITableView!
     
     var myPerfil : Perfil? = nil
+    var countComplete : Double = 0.0
 
-    var vacinas = [Vacina]()
+    var listVacinas = [Vacina]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        circleProgress.setProgress(1, animated: true);
+        circleProgress.setProgress(0, animated: true);
         loadPerfil(perfil: myPerfil!)
         loadUserInformation()
         
         self.myTableVacinas.delegate = self
         self.myTableVacinas.dataSource = self
         
-        VacinasDAO.listBy(category: myPerfil!.myVaccines, onComplete: { vacinas in
-            self.vacinas = vacinas!
+        VacinasDAO.listVaccinesBy(perfil: myPerfil!, onComplete: { vacinas in
+            self.listVacinas = vacinas!
             self.myTableVacinas.reloadData()
+            
+            DispatchQueue.global(qos: .background).async {
+                for vacina in self.listVacinas where vacina.isChecked {
+                    self.upCount()
+                }
+            }
         })
     }
     
@@ -43,6 +50,7 @@ class PerfilController: UIViewController, UITableViewDelegate, UITableViewDataSo
         self.myName.text = perfil.name
         self.myAge.text = perfil.age
         self.myImage.image = perfil.image
+        self.setProgress(perfil.progress)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -62,18 +70,31 @@ class PerfilController: UIViewController, UITableViewDelegate, UITableViewDataSo
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-            return vacinas.count
+            return listVacinas.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Vacina", for: indexPath)
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "Vacina") {
         
-        let vacina = vacinas[indexPath.row]
-        cell.textLabel?.text = vacina.vacina
-        cell.detailTextLabel?.text = vacina.dose
-        cell.selectionStyle = UITableViewCellSelectionStyle.none
+            let vacina = listVacinas[indexPath.row]
+            cell.textLabel?.text = vacina.vacina
+            cell.detailTextLabel?.text = vacina.dose
+            cell.selectionStyle = UITableViewCellSelectionStyle.none
+            
+            if vacina.isChecked {
+                cell.accessoryType = UITableViewCellAccessoryType.checkmark
+                self.strikeTo(label: cell.textLabel!, with: cell.textLabel!.text!, with: .styleSingle)
+                self.strikeTo(label: cell.detailTextLabel!, with: cell.detailTextLabel!.text!, with: .styleSingle)
+            }else{
+                cell.accessoryType = UITableViewCellAccessoryType.none
+                self.strikeTo(label: cell.textLabel!, with: cell.textLabel!.text!, with: .styleNone)
+                self.strikeTo(label: cell.detailTextLabel!, with: cell.detailTextLabel!.text!, with: .styleNone)
+            }
     
-        return cell
+            return cell
+        }
+        
+        return UITableViewCell()
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -82,19 +103,31 @@ class PerfilController: UIViewController, UITableViewDelegate, UITableViewDataSo
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let cell = tableView.cellForRow(at: indexPath){
-            selectLabel(cell)
+            selectLabel(cell, indexPath.row)
         }
     }
     
-    func selectLabel(_ cell : UITableViewCell){
-        if cell.accessoryType == UITableViewCellAccessoryType.checkmark {
+    func selectLabel(_ cell : UITableViewCell, _ index : Int){
+        // Se a célula estiver checada
+        if listVacinas[index].isChecked {
             cell.accessoryType = UITableViewCellAccessoryType.none
             self.strikeTo(label: cell.textLabel!, with: cell.textLabel!.text!, with: .styleNone)
             self.strikeTo(label: cell.detailTextLabel!, with: cell.detailTextLabel!.text!, with: .styleNone)
+            
+            PerfilDAO.removeVaccine(id: listVacinas[index].id, to: myPerfil!)
+            listVacinas[index].isChecked = false
+            
+            self.downCount()
+            
         }else{
             cell.accessoryType = UITableViewCellAccessoryType.checkmark
             self.strikeTo(label: cell.textLabel!, with: cell.textLabel!.text!, with: .styleSingle)
             self.strikeTo(label: cell.detailTextLabel!, with: cell.detailTextLabel!.text!, with: .styleSingle)
+            
+            PerfilDAO.addVaccine(id: listVacinas[index].id, to: myPerfil!)
+            listVacinas[index].isChecked = true
+        
+            self.upCount()
         }
     }
     
@@ -107,6 +140,33 @@ class PerfilController: UIViewController, UITableViewDelegate, UITableViewDataSo
         } else {
             label.textColor = UIColor.black
         }
+    }
+    
+    func calcProgress(){
+        let myProgress : Double = self.countComplete / Double(self.listVacinas.count)
+        self.setProgress(myProgress)
+        PerfilDAO.set(progress: myProgress, to: myPerfil!)
+    }
+    
+    func upCount(){
+        if self.countComplete <= Double(listVacinas.count) {
+            self.countComplete = self.countComplete + 1
+            self.calcProgress()
+        }
+    }
+    
+    func downCount(){
+        if self.countComplete >= 0 {
+            self.countComplete = self.countComplete - 1
+            self.calcProgress()
+        }
+    }
+    
+    func setProgress(_ progress : Double){
+        DispatchQueue.main.async {
+            self.textProgress.text = "\(String(format:"%.0f", progress * 100))%"
+        }
+        self.circleProgress.setProgress(progress, animated: true)
     }
 
     override func didReceiveMemoryWarning() {

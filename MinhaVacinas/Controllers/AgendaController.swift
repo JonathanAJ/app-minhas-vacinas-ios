@@ -20,8 +20,8 @@ class AgendaController: UIViewController, UICollectionViewDataSource, UICollecti
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        circleProgress.setProgress(1, animated: true);
-        textProgress.text = "100%"
+        circleProgress.setProgress(0, animated: true);
+        textProgress.text = "0%"
         
         collectionView.dataSource = self
         collectionView.delegate = self
@@ -33,7 +33,20 @@ class AgendaController: UIViewController, UICollectionViewDataSource, UICollecti
                 self.dataPerfis = []
             }
             self.collectionView.reloadData()
+            
+            var sumProgress : Double = 0
+            var countProgress : Double = 0
+            for perfil in self.dataPerfis {
+                sumProgress = sumProgress + perfil.progress
+                countProgress = countProgress + 1
+            }
+            self.setProgress(sumProgress/countProgress)
         })
+    }
+    
+    func setProgress(_ progress : Double){
+        self.circleProgress.setProgress(progress, animated: true)
+        self.textProgress.text = "\(String(format:"%.0f", progress * 100))%"
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -57,7 +70,8 @@ class AgendaController: UIViewController, UICollectionViewDataSource, UICollecti
         
         myCell.displayCell(image: dataPerfis[indexPath.row].image,
                            name: dataPerfis[indexPath.row].name,
-                           age: dataPerfis[indexPath.row].age)
+                           age: dataPerfis[indexPath.row].age,
+                           progress: dataPerfis[indexPath.row].progress)
         
         return myCell
     }

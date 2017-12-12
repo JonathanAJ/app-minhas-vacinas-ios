@@ -92,43 +92,56 @@
                                             <rect key="frame" x="0.0" y="0.0" width="100" height="180"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ios7-person-outline" translatesAutoresizingMaskIntoConstraints="NO" id="3tx-Tx-kS3">
-                                                    <rect key="frame" x="10" y="0.0" width="80" height="80"/>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V6e-7t-EMh">
+                                                    <rect key="frame" x="0.0" y="0.0" width="100" height="180"/>
+                                                    <subviews>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ios7-person-outline" translatesAutoresizingMaskIntoConstraints="NO" id="3tx-Tx-kS3">
+                                                            <rect key="frame" x="10" y="32" width="80" height="80"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="80" id="anZ-UI-pbH"/>
+                                                                <constraint firstAttribute="width" constant="80" id="vF1-as-cRS"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nome Teste AAA" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rzs-dJ-kQA">
+                                                            <rect key="frame" x="0.0" y="120" width="100" height="20"/>
+                                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                                            <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <color key="highlightedColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <size key="shadowOffset" width="0.0" height="2"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="idade" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IwQ-5D-C2W">
+                                                            <rect key="frame" x="0.0" y="148" width="100" height="17"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <color key="highlightedColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="80" id="8PX-ly-9kf"/>
-                                                        <constraint firstAttribute="width" constant="80" id="xoa-K0-QI2"/>
+                                                        <constraint firstItem="Rzs-dJ-kQA" firstAttribute="top" secondItem="3tx-Tx-kS3" secondAttribute="bottom" constant="8" id="1ip-xX-Sp6"/>
+                                                        <constraint firstAttribute="trailing" secondItem="IwQ-5D-C2W" secondAttribute="trailing" id="4b8-hy-AGE"/>
+                                                        <constraint firstItem="IwQ-5D-C2W" firstAttribute="leading" secondItem="V6e-7t-EMh" secondAttribute="leading" id="NCU-1Y-ANo"/>
+                                                        <constraint firstItem="Rzs-dJ-kQA" firstAttribute="leading" secondItem="V6e-7t-EMh" secondAttribute="leading" id="PjY-6L-Dxx"/>
+                                                        <constraint firstItem="3tx-Tx-kS3" firstAttribute="top" secondItem="V6e-7t-EMh" secondAttribute="top" constant="32" id="g59-OE-0ej"/>
+                                                        <constraint firstItem="IwQ-5D-C2W" firstAttribute="top" secondItem="Rzs-dJ-kQA" secondAttribute="bottom" constant="8" id="oMt-vj-2zU"/>
+                                                        <constraint firstItem="3tx-Tx-kS3" firstAttribute="centerX" secondItem="V6e-7t-EMh" secondAttribute="centerX" id="yI5-WE-I0s"/>
+                                                        <constraint firstAttribute="trailing" secondItem="Rzs-dJ-kQA" secondAttribute="trailing" id="zom-8S-AdV"/>
                                                     </constraints>
-                                                </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="idade" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IwQ-5D-C2W">
-                                                    <rect key="frame" x="16" y="115.5" width="68" height="17"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <color key="highlightedColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nome Teste AAA" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rzs-dJ-kQA">
-                                                    <rect key="frame" x="16" y="88" width="68" height="19.5"/>
-                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
-                                                    <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <color key="highlightedColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <size key="shadowOffset" width="0.0" height="2"/>
-                                                </label>
+                                                </view>
                                             </subviews>
                                         </view>
                                         <constraints>
-                                            <constraint firstItem="3tx-Tx-kS3" firstAttribute="centerX" secondItem="z9e-MF-tRL" secondAttribute="centerX" id="9rt-ic-cER"/>
-                                            <constraint firstItem="Rzs-dJ-kQA" firstAttribute="leading" secondItem="z9e-MF-tRL" secondAttribute="leadingMargin" id="IO3-4b-VsM"/>
-                                            <constraint firstAttribute="trailingMargin" secondItem="Rzs-dJ-kQA" secondAttribute="trailing" id="Z85-Gf-Hbl"/>
-                                            <constraint firstItem="Rzs-dJ-kQA" firstAttribute="top" secondItem="3tx-Tx-kS3" secondAttribute="bottom" constant="8" id="dEc-LA-WKs"/>
-                                            <constraint firstItem="IwQ-5D-C2W" firstAttribute="leading" secondItem="z9e-MF-tRL" secondAttribute="leadingMargin" id="sUb-ra-ze8"/>
-                                            <constraint firstItem="IwQ-5D-C2W" firstAttribute="top" secondItem="Rzs-dJ-kQA" secondAttribute="bottom" constant="8" id="szc-gU-BIf"/>
-                                            <constraint firstItem="3tx-Tx-kS3" firstAttribute="top" secondItem="z9e-MF-tRL" secondAttribute="top" id="uC7-Pl-QfG"/>
-                                            <constraint firstAttribute="trailingMargin" secondItem="IwQ-5D-C2W" secondAttribute="trailing" id="wY7-oo-Qfb"/>
+                                            <constraint firstItem="V6e-7t-EMh" firstAttribute="leading" secondItem="z9e-MF-tRL" secondAttribute="leading" id="IS4-Me-4Wc"/>
+                                            <constraint firstItem="V6e-7t-EMh" firstAttribute="top" secondItem="z9e-MF-tRL" secondAttribute="top" id="MYe-e0-Ika"/>
+                                            <constraint firstAttribute="trailing" secondItem="V6e-7t-EMh" secondAttribute="trailing" id="SCy-50-qPa"/>
+                                            <constraint firstAttribute="bottom" secondItem="V6e-7t-EMh" secondAttribute="bottom" id="uII-Gr-Qcx"/>
                                         </constraints>
                                         <size key="customSize" width="100" height="180"/>
                                         <connections>
                                             <outlet property="myImage" destination="3tx-Tx-kS3" id="0Ve-AF-46X"/>
                                             <outlet property="myLabelAge" destination="IwQ-5D-C2W" id="IhQ-KT-o4v"/>
                                             <outlet property="myLabelName" destination="Rzs-dJ-kQA" id="WSp-ug-s8e"/>
+                                            <outlet property="myView" destination="V6e-7t-EMh" id="Sds-9s-tUR"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -207,7 +220,7 @@
                             <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="6RQ-ct-7kz" customClass="CircleProgressView" customModule="MinhaVacinas" customModuleProvider="target">
                                 <rect key="frame" x="289" y="30" width="70" height="70"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YTF-S6-saw">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YTF-S6-saw">
                                         <rect key="frame" x="8" y="8" width="54" height="54"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -504,6 +517,6 @@
         <image name="ios7-person-outline" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="8Qs-fw-T8D"/>
+        <segue reference="hgq-Q6-kua"/>
     </inferredMetricsTieBreakers>
 </document>

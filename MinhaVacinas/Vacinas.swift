@@ -9,6 +9,7 @@
 import Foundation
 
 struct Vacina {
+    var id: String = ""
     var idade: String = ""
     var vacina: String = ""
     var doenca: String = ""
@@ -16,4 +17,5 @@ struct Vacina {
     var doseQtd: String? = ""
     var viaAdm: String? = ""
     var descricao: String = ""
+    var isChecked: Bool = false
 }

@@ -38,7 +38,7 @@ class InfoController: UIViewController,UITableViewDataSource, UITableViewDelegat
         
         VacinasDAO.listAll(onComplete: { vacinas in
             self.vacinas = vacinas
-            self.sessoes = VacinasDAO.categorais
+            self.sessoes = VacinasDAO.categories
             self.listaVacinas.reloadData()
         })
         
